@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="https://xipurewhite.github.io/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="https://xipurewhite.github.io/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="https://xipurewhite.github.io/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="https://xipurewhite.github.io/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="https://xipurewhite.github.io/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="https://xipurewhite.github.io/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="https://xipurewhite.github.io/images/logo.svg?v=5.1.4" color="#222">
+
+
+  <link rel="manifest" href="https://xipurewhite.github.io/images/manifest.json">
+
+
+  <meta name="msapplication-config" content="https://xipurewhite.github.io/images/browserconfig.xml" />
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="[计算机组成原理的学习]1_1-计算机系统结构的八大思想 序言 总概要: 该概要是对整个[计算机组成原理的学习]的系列文章的说明. ​        名为[计算机组成原理的学习]的一系列文章的主题是计算机组成原理, 主要以《计算机组成与设计-硬件&#x2F;软件接口》为主要参考教材, 并可能以其他教材为辅, 同时参考网络上不同文章来进行计算机组成原理的学习. ​        这个系列文章以学习为目的而进行">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[计算机组成原理的学习]1_1-计算机系统结构的八大思想">
+<meta property="og:url" content="https://xipurewhite.github.io/2020/02/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E7%9A%84%E5%AD%A6%E4%B9%A0-1-1-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E7%9A%84%E5%85%AB%E5%A4%A7%E6%80%9D%E6%83%B3/index.html">
+<meta property="og:site_name" content="XIPureWhite Home">
+<meta property="og:description" content="[计算机组成原理的学习]1_1-计算机系统结构的八大思想 序言 总概要: 该概要是对整个[计算机组成原理的学习]的系列文章的说明. ​        名为[计算机组成原理的学习]的一系列文章的主题是计算机组成原理, 主要以《计算机组成与设计-硬件&#x2F;软件接口》为主要参考教材, 并可能以其他教材为辅, 同时参考网络上不同文章来进行计算机组成原理的学习. ​        这个系列文章以学习为目的而进行">
+<meta property="article:published_time" content="2020-02-29T03:53:52.000Z">
+<meta property="article:modified_time" content="2020-02-29T03:55:05.052Z">
+<meta property="article:author" content="XIPureWhite">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: 'https://xipurewhite.github.io/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://xipurewhite.github.io/2020/02/29/计算机组成原理的学习-1-1-计算机系统结构的八大思想/"/>
+
+
+
+
+
+  <title>[计算机组成原理的学习]1_1-计算机系统结构的八大思想 | XIPureWhite Home</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="https://xipurewhite.github.io/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">XIPureWhite Home</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="https://xipurewhite.github.io/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="https://xipurewhite.github.io/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="https://xipurewhite.github.io/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="https://xipurewhite.github.io/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="https://xipurewhite.github.io/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="https://xipurewhite.github.io/schedule/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
+            
+            日程表
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="https://xipurewhite.github.io/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="https://xipurewhite.github.io/404/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://xipurewhite.github.iohttps://xipurewhite.github.io/2020/02/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E7%9A%84%E5%AD%A6%E4%B9%A0-1-1-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E7%9A%84%E5%85%AB%E5%A4%A7%E6%80%9D%E6%83%B3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="XIPureWhite">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://xipurewhite.github.io/[object%20Object]">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XIPureWhite Home">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">[计算机组成原理的学习]1_1-计算机系统结构的八大思想</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-02-29T11:53:52+08:00">
+                2020-02-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="https://xipurewhite.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" itemprop="url" rel="index">
+                    <span itemprop="name">-计算机组成原理</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="计算机组成原理的学习-1-1-计算机系统结构的八大思想"><a href="#计算机组成原理的学习-1-1-计算机系统结构的八大思想" class="headerlink" title="[计算机组成原理的学习]1_1-计算机系统结构的八大思想"></a><strong>[计算机组成原理的学习]1_1-计算机系统结构的八大思想</strong></h2><hr>
+<h3 id="序言"><a href="#序言" class="headerlink" title="序言"></a>序言</h3><blockquote>
+<p>总概要: 该概要是对整个[计算机组成原理的学习]的系列文章的说明.</p>
+<p>​        名为[计算机组成原理的学习]的一系列文章的主题是计算机组成原理, 主要以《计算机组成与设计-硬件/软件接口》为主要参考教材, 并可能以其他教材为辅, 同时参考网络上不同文章来进行计算机组成原理的学习.</p>
+<p>​        这个系列文章以学习为目的而进行,而非更加深入的研究和分析. 因此这个主题的文章将难免的存在不足和错误. 只能尽可能的思考再得出结论.文章的结论可能包含偏离实际的思考结果,无法对正确性做出保证.简单言之, 以[计算机组成原理的学习]为题的这一系列文章是以学习为目的,基于教材与其他来自于网络的知识/观点,结合独立的实践,想象和思考得出的结果. 这一系列文章将会不定期的进行修正和补充, 同时欢迎任何人提出观点, 作出批评.</p>
+</blockquote>
+<h3 id="章节目录"><a href="#章节目录" class="headerlink" title="章节目录"></a>章节目录</h3><blockquote>
+<h4 id="计算机体系结构的八大思想"><a href="#计算机体系结构的八大思想" class="headerlink" title="计算机体系结构的八大思想"></a>计算机体系结构的八大思想</h4><ul>
+<li>设计<ul>
+<li>面向摩尔定理的设计</li>
+<li>抽象化设计</li>
+</ul>
+</li>
+<li>性能<ul>
+<li>并行处理</li>
+<li>流水线处理</li>
+<li>加速大概率事件</li>
+<li>预测</li>
+</ul>
+</li>
+<li>存储器层次</li>
+<li>可靠性<ul>
+<li>冗余利用</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h3 id="章节内容"><a href="#章节内容" class="headerlink" title="章节内容"></a>章节内容</h3><blockquote>
+<h4 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h4><blockquote>
+<h5 id="思考"><a href="#思考" class="headerlink" title="思考"></a>思考</h5><blockquote>
+</blockquote>
+<h5 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h5><blockquote>
+</blockquote>
+</blockquote>
+<h4 id="面向摩尔定理的设计"><a href="#面向摩尔定理的设计" class="headerlink" title="面向摩尔定理的设计"></a>面向摩尔定理的设计</h4><blockquote>
+<h5 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">计算机设计往往需要几年的时间, 而根据摩尔定理, 计算机的设计者们需要预测计算机在设计完成时的工艺水平而非设计开始时的.</span><br></pre></td></tr></table></figure>
+
+<h5 id="摩尔定律"><a href="#摩尔定律" class="headerlink" title="摩尔定律"></a>摩尔定律</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">单芯片集成电路的密集度每18个月到24个月会翻一倍以上.</span><br></pre></td></tr></table></figure>
+
+
+</blockquote>
+<h4 id="抽象化设计"><a href="#抽象化设计" class="headerlink" title="抽象化设计"></a>抽象化设计</h4><blockquote>
+<h5 id="概念-1"><a href="#概念-1" class="headerlink" title="概念"></a>概念</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">通过抽象化来表达不同的设计层次, 在高层次中隐藏低层次的内容, 而是一个简单的模型.</span><br></pre></td></tr></table></figure>
+
+
+</blockquote>
+<h4 id="并行处理"><a href="#并行处理" class="headerlink" title="并行处理"></a>并行处理</h4><blockquote>
+<h5 id="概念-2"><a href="#概念-2" class="headerlink" title="概念"></a>概念</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">通过对程序进行并行化处, 将工作分配到多个不同的进程中, 是一种能够使计算机同时进行两个或多个处理的计算方法, 往往因为不同进程之间的联系, 并行处理无法自动化实现.</span><br></pre></td></tr></table></figure>
+
+
+</blockquote>
+<h4 id="流水线处理"><a href="#流水线处理" class="headerlink" title="流水线处理"></a>流水线处理</h4><blockquote>
+<h5 id="概念-3"><a href="#概念-3" class="headerlink" title="概念"></a>概念</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">流水线处理是一种将程序多个指令重叠执行的准并行处理计算.</span><br><span class="line">在CPU中将N个不同功能的电路单元组成一条指令处理流水线, 然后将这条指令分为N步后由这些电路单元单独执行.和串行执行不同, 流水线处理将一条指令分给不同的电路单元顺序的完成不同步骤, 并且完成特定步骤的同时(当前指令并未处理完的时候), (由完成当前指令的子步骤的电路单元)对下一个指令进行处理.</span><br><span class="line">而在串行处理中, 一条指令的执行只有在上一条指令执行完成后才进行, 流水线处理是对指令执行过程中出现的空闲电路单元的利用.</span><br></pre></td></tr></table></figure>
+
+
+</blockquote>
+<h4 id="加速大概率事件"><a href="#加速大概率事件" class="headerlink" title="加速大概率事件"></a>加速大概率事件</h4><blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">对大概率事件进行优化远比对小概率事件的优化更能提高性能, 并且大概率事件往往比小概率事件更加简单, 从而也易于优化.</span><br></pre></td></tr></table></figure>
+
+
+</blockquote>
+<h4 id="预测"><a href="#预测" class="headerlink" title="预测"></a>预测</h4><blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">在预测恢复执行代价不高并且预测的准确率相对较高的前提下, 通过猜测的方式提前开始某些任务, 会比知道这些任务确切会执行再启动才开始会快一些.</span><br></pre></td></tr></table></figure>
+
+
+</blockquote>
+<h4 id="存储器层次"><a href="#存储器层次" class="headerlink" title="存储器层次"></a>存储器层次</h4><blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">依据计算机不同功能的需求对存储器进行划分, 提出不同的存储器层次.</span><br></pre></td></tr></table></figure>
+
+
+</blockquote>
+<h4 id="可靠性"><a href="#可靠性" class="headerlink" title="可靠性"></a>可靠性</h4><blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+</blockquote>
+<h4 id="冗余利用"><a href="#冗余利用" class="headerlink" title="冗余利用"></a>冗余利用</h4><blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+</blockquote>
+</blockquote>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="https://xipurewhite.github.io/2020/02/28/%E6%B5%8B%E8%AF%951/" rel="next" title="测试1">
+                <i class="fa fa-chevron-left"></i> 测试1
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="https://xipurewhite.github.io/[object%20Object]"
+                alt="XIPureWhite" />
+            
+              <p class="site-author-name" itemprop="name">XIPureWhite</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="https://xipurewhite.github.io/archives/%20">
+              
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="https://xipurewhite.github.io/categories/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="https://xipurewhite.github.io/tags/index.html">
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#计算机组成原理的学习-1-1-计算机系统结构的八大思想"><span class="nav-number">1.</span> <span class="nav-text">[计算机组成原理的学习]1_1-计算机系统结构的八大思想</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#序言"><span class="nav-number">1.1.</span> <span class="nav-text">序言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#章节目录"><span class="nav-number">1.2.</span> <span class="nav-text">章节目录</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#计算机体系结构的八大思想"><span class="nav-number">1.2.1.</span> <span class="nav-text">计算机体系结构的八大思想</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#章节内容"><span class="nav-number">1.3.</span> <span class="nav-text">章节内容</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#引言"><span class="nav-number">1.3.1.</span> <span class="nav-text">引言</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#思考"><span class="nav-number">1.3.1.1.</span> <span class="nav-text">思考</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#例子"><span class="nav-number">1.3.1.2.</span> <span class="nav-text">例子</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#面向摩尔定理的设计"><span class="nav-number">1.3.2.</span> <span class="nav-text">面向摩尔定理的设计</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#概念"><span class="nav-number">1.3.2.1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#摩尔定律"><span class="nav-number">1.3.2.2.</span> <span class="nav-text">摩尔定律</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#抽象化设计"><span class="nav-number">1.3.3.</span> <span class="nav-text">抽象化设计</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#概念-1"><span class="nav-number">1.3.3.1.</span> <span class="nav-text">概念</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#并行处理"><span class="nav-number">1.3.4.</span> <span class="nav-text">并行处理</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#概念-2"><span class="nav-number">1.3.4.1.</span> <span class="nav-text">概念</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#流水线处理"><span class="nav-number">1.3.5.</span> <span class="nav-text">流水线处理</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#概念-3"><span class="nav-number">1.3.5.1.</span> <span class="nav-text">概念</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#加速大概率事件"><span class="nav-number">1.3.6.</span> <span class="nav-text">加速大概率事件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#预测"><span class="nav-number">1.3.7.</span> <span class="nav-text">预测</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#存储器层次"><span class="nav-number">1.3.8.</span> <span class="nav-text">存储器层次</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#可靠性"><span class="nav-number">1.3.9.</span> <span class="nav-text">可靠性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#冗余利用"><span class="nav-number">1.3.10.</span> <span class="nav-text">冗余利用</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">XIPureWhite</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="https://xipurewhite.github.io/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="https://xipurewhite.github.io/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="https://xipurewhite.github.io/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="https://xipurewhite.github.io/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="https://xipurewhite.github.io/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="https://xipurewhite.github.io/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="https://xipurewhite.github.io/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="https://xipurewhite.github.io/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="https://xipurewhite.github.io/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="https://xipurewhite.github.io/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="https://xipurewhite.github.io/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="https://xipurewhite.github.io/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="https://xipurewhite.github.io/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
