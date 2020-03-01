@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="https://xipurewhite.github.io/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="https://xipurewhite.github.io/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="https://xipurewhite.github.io/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="https://xipurewhite.github.io/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="https://xipurewhite.github.io/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="https://xipurewhite.github.io/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="https://xipurewhite.github.io/images/logo.svg?v=5.1.4" color="#222">
+
+
+  <link rel="manifest" href="https://xipurewhite.github.io/images/manifest.json">
+
+
+  <meta name="msapplication-config" content="https://xipurewhite.github.io/images/browserconfig.xml" />
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="[操作系统概念的学习] 1_1-导论 章节目录 目录  操作系统的功能 用户视角 系统视角 操作系统的定义   计算机系统的组成 计算机系统操作 存储结构 I&#x2F;O控制   计算机系统的体系结构 单处理器系统 多处理器系统 集群系统   操作系统的结构 操作系统的执行 双重模式操作 定时器   进程管理 内存管理 存储管理 文件系统管理 大容量存储器管理 高速缓存 I&#x2F;O系统   保护和安全 内核数">
+<meta property="og:type" content="article">
+<meta property="og:title" content="操作系统概念的学习-1-1-导论">
+<meta property="og:url" content="https://xipurewhite.github.io/2020/03/01/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%A6%82%E5%BF%B5%E7%9A%84%E5%AD%A6%E4%B9%A0-1-1-%E5%AF%BC%E8%AE%BA/index.html">
+<meta property="og:site_name" content="XIPureWhite Home">
+<meta property="og:description" content="[操作系统概念的学习] 1_1-导论 章节目录 目录  操作系统的功能 用户视角 系统视角 操作系统的定义   计算机系统的组成 计算机系统操作 存储结构 I&#x2F;O控制   计算机系统的体系结构 单处理器系统 多处理器系统 集群系统   操作系统的结构 操作系统的执行 双重模式操作 定时器   进程管理 内存管理 存储管理 文件系统管理 大容量存储器管理 高速缓存 I&#x2F;O系统   保护和安全 内核数">
+<meta property="og:image" content="https://xipurewhite.github.io/2020/03/01/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%A6%82%E5%BF%B5%E7%9A%84%E5%AD%A6%E4%B9%A0-1-1-%E5%AF%BC%E8%AE%BA/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%A6%82%E5%BF%B5_1_1.png">
+<meta property="article:published_time" content="2020-03-01T13:45:26.000Z">
+<meta property="article:modified_time" content="2020-03-01T14:04:59.966Z">
+<meta property="article:author" content="XIPureWhite">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://xipurewhite.github.io/2020/03/01/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%A6%82%E5%BF%B5%E7%9A%84%E5%AD%A6%E4%B9%A0-1-1-%E5%AF%BC%E8%AE%BA/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%A6%82%E5%BF%B5_1_1.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: 'https://xipurewhite.github.io/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://xipurewhite.github.io/2020/03/01/操作系统概念的学习-1-1-导论/"/>
+
+
+
+
+
+  <title>操作系统概念的学习-1-1-导论 | XIPureWhite Home</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="https://xipurewhite.github.io/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">XIPureWhite Home</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="https://xipurewhite.github.io/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="https://xipurewhite.github.io/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="https://xipurewhite.github.io/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="https://xipurewhite.github.io/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="https://xipurewhite.github.io/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="https://xipurewhite.github.io/schedule/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
+            
+            日程表
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="https://xipurewhite.github.io/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="https://xipurewhite.github.io/404/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://xipurewhite.github.iohttps://xipurewhite.github.io/2020/03/01/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%A6%82%E5%BF%B5%E7%9A%84%E5%AD%A6%E4%B9%A0-1-1-%E5%AF%BC%E8%AE%BA/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="XIPureWhite">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://xipurewhite.github.io/[object%20Object]">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XIPureWhite Home">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">操作系统概念的学习-1-1-导论</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-01T21:45:26+08:00">
+                2020-03-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="https://xipurewhite.github.io/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%90%86%E8%AE%BA/" itemprop="url" rel="index">
+                    <span itemprop="name">-操作系统理论</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="操作系统概念的学习-1-1-导论"><a href="#操作系统概念的学习-1-1-导论" class="headerlink" title="[操作系统概念的学习] 1_1-导论"></a>[操作系统概念的学习] 1_1-导论</h1><hr>
+<h2 id="章节目录"><a href="#章节目录" class="headerlink" title="章节目录"></a>章节目录</h2><blockquote>
+<h3 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h3><blockquote>
+<ul>
+<li><h4 id="操作系统的功能"><a href="#操作系统的功能" class="headerlink" title="操作系统的功能"></a>操作系统的功能</h4><ul>
+<li><h5 id="用户视角"><a href="#用户视角" class="headerlink" title="用户视角"></a>用户视角</h5></li>
+<li><h5 id="系统视角"><a href="#系统视角" class="headerlink" title="系统视角"></a>系统视角</h5></li>
+<li><h5 id="操作系统的定义"><a href="#操作系统的定义" class="headerlink" title="操作系统的定义"></a>操作系统的定义</h5></li>
+</ul>
+</li>
+<li><h4 id="计算机系统的组成"><a href="#计算机系统的组成" class="headerlink" title="计算机系统的组成"></a>计算机系统的组成</h4><ul>
+<li><h5 id="计算机系统操作"><a href="#计算机系统操作" class="headerlink" title="计算机系统操作"></a>计算机系统操作</h5></li>
+<li><h5 id="存储结构"><a href="#存储结构" class="headerlink" title="存储结构"></a>存储结构</h5></li>
+<li><h5 id="I-O控制"><a href="#I-O控制" class="headerlink" title="I/O控制"></a>I/O控制</h5></li>
+</ul>
+</li>
+<li><h4 id="计算机系统的体系结构"><a href="#计算机系统的体系结构" class="headerlink" title="计算机系统的体系结构"></a>计算机系统的体系结构</h4><ul>
+<li><h5 id="单处理器系统"><a href="#单处理器系统" class="headerlink" title="单处理器系统"></a>单处理器系统</h5></li>
+<li><h5 id="多处理器系统"><a href="#多处理器系统" class="headerlink" title="多处理器系统"></a>多处理器系统</h5></li>
+<li><h5 id="集群系统"><a href="#集群系统" class="headerlink" title="集群系统"></a>集群系统</h5></li>
+</ul>
+</li>
+<li><h4 id="操作系统的结构"><a href="#操作系统的结构" class="headerlink" title="操作系统的结构"></a>操作系统的结构</h4></li>
+<li><h4 id="操作系统的执行"><a href="#操作系统的执行" class="headerlink" title="操作系统的执行"></a>操作系统的执行</h4><ul>
+<li><h5 id="双重模式操作"><a href="#双重模式操作" class="headerlink" title="双重模式操作"></a>双重模式操作</h5></li>
+<li><h5 id="定时器"><a href="#定时器" class="headerlink" title="定时器"></a>定时器</h5></li>
+</ul>
+</li>
+<li><h4 id="进程管理"><a href="#进程管理" class="headerlink" title="进程管理"></a>进程管理</h4></li>
+<li><h4 id="内存管理"><a href="#内存管理" class="headerlink" title="内存管理"></a>内存管理</h4></li>
+<li><h4 id="存储管理"><a href="#存储管理" class="headerlink" title="存储管理"></a>存储管理</h4><ul>
+<li><h5 id="文件系统管理"><a href="#文件系统管理" class="headerlink" title="文件系统管理"></a>文件系统管理</h5></li>
+<li><h5 id="大容量存储器管理"><a href="#大容量存储器管理" class="headerlink" title="大容量存储器管理"></a>大容量存储器管理</h5></li>
+<li><h5 id="高速缓存"><a href="#高速缓存" class="headerlink" title="高速缓存"></a>高速缓存</h5></li>
+<li><h5 id="I-O系统"><a href="#I-O系统" class="headerlink" title="I/O系统"></a>I/O系统</h5></li>
+</ul>
+</li>
+<li><h4 id="保护和安全"><a href="#保护和安全" class="headerlink" title="保护和安全"></a>保护和安全</h4></li>
+<li><h4 id="内核数据结构"><a href="#内核数据结构" class="headerlink" title="内核数据结构"></a>内核数据结构</h4></li>
+<li><h4 id="计算环境"><a href="#计算环境" class="headerlink" title="计算环境"></a>计算环境</h4><ul>
+<li><h5 id="传统计算"><a href="#传统计算" class="headerlink" title="传统计算"></a>传统计算</h5></li>
+<li><h5 id="客户机-服务器计算"><a href="#客户机-服务器计算" class="headerlink" title="客户机-服务器计算"></a>客户机-服务器计算</h5></li>
+<li><h5 id="对等计算"><a href="#对等计算" class="headerlink" title="对等计算"></a>对等计算</h5></li>
+<li><h5 id="基于Web的计算"><a href="#基于Web的计算" class="headerlink" title="基于Web的计算"></a>基于Web的计算</h5></li>
+</ul>
+</li>
+<li><h4 id="开源操作系统"><a href="#开源操作系统" class="headerlink" title="开源操作系统"></a>开源操作系统</h4></li>
+</ul>
+</blockquote>
+</blockquote>
+<h2 id="章节内容"><a href="#章节内容" class="headerlink" title="章节内容"></a>章节内容</h2><blockquote>
+<h2 id="1-1操作系统的功能"><a href="#1-1操作系统的功能" class="headerlink" title="1.1操作系统的功能"></a>1.1操作系统的功能</h2><blockquote>
+<h3 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h3><blockquote>
+<h4 id="计算机系统的构成组件"><a href="#计算机系统的构成组件" class="headerlink" title="计算机系统的构成组件"></a>计算机系统的构成组件</h4><ul>
+<li><h5 id="计算机硬件"><a href="#计算机硬件" class="headerlink" title="计算机硬件"></a>计算机硬件</h5><ul>
+<li>中央处理器, 内存,输入输出设备…</li>
+</ul>
+</li>
+<li><h5 id="操作系统"><a href="#操作系统" class="headerlink" title="操作系统"></a>操作系统</h5></li>
+<li><h5 id="系统程序"><a href="#系统程序" class="headerlink" title="系统程序"></a>系统程序</h5></li>
+<li><h5 id="应用程序和用户"><a href="#应用程序和用户" class="headerlink" title="应用程序和用户"></a>应用程序和用户</h5><ul>
+<li>字处理程序,电子制表软件,编译器,网络浏览器…</li>
+</ul>
+</li>
+</ul>
+<h4 id="关系"><a href="#关系" class="headerlink" title="关系:"></a>关系:</h4><ul>
+<li><p>计算机硬件为计算机软件层次提供支持</p>
+</li>
+<li><p>操作系统是计算机硬件和计算机用户的中介</p>
+</li>
+<li><p>操作系统管理计算机硬件</p>
+</li>
+<li><p>操作系统为 其他程序提供工作环境</p>
+</li>
+<li><p>系统程序提供常用的服务软件</p>
+</li>
+<li><p>应用程序规定了用户为解决计算问题而使用应用程序的方式</p>
+</li>
+</ul>
+<h4 id="计算机系统组件的层次"><a href="#计算机系统组件的层次" class="headerlink" title="计算机系统组件的层次"></a>计算机系统组件的层次</h4><p><img src="%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%A6%82%E5%BF%B5_1_1.png" alt=""></p>
+</blockquote>
+<hr>
+<h3 id="用户视角-1"><a href="#用户视角-1" class="headerlink" title="用户视角"></a>用户视角</h3><blockquote>
+<h4 id="PC计算机的设计"><a href="#PC计算机的设计" class="headerlink" title="PC计算机的设计"></a>PC计算机的设计</h4><ul>
+<li><h5 id="用户使用方便-次要的是性能"><a href="#用户使用方便-次要的是性能" class="headerlink" title="用户使用方便,次要的是性能"></a>用户使用方便,次要的是性能</h5><ul>
+<li>优化用户体验的设计:显示器,键盘,鼠标和主机等一类系统让单个用户单独使用的资源</li>
+</ul>
+</li>
+<li><h5 id="不在乎资源利用"><a href="#不在乎资源利用" class="headerlink" title="不在乎资源利用"></a>不在乎资源利用</h5></li>
+</ul>
+<h4 id="影响因素"><a href="#影响因素" class="headerlink" title="影响因素"></a>影响因素</h4><ul>
+<li>计算机用户对操作系统的观点因使用的接口不同而不同</li>
+</ul>
+</blockquote>
+<h3 id="系统视角-1"><a href="#系统视角-1" class="headerlink" title="系统视角"></a>系统视角</h3><blockquote>
+<ul>
+<li><h5 id="操作系统是和硬件紧密相连的程序"><a href="#操作系统是和硬件紧密相连的程序" class="headerlink" title="操作系统是和硬件紧密相连的程序"></a>操作系统是和硬件紧密相连的程序</h5></li>
+<li><h5 id="操作系统可以看作资源分配器"><a href="#操作系统可以看作资源分配器" class="headerlink" title="操作系统可以看作资源分配器"></a>操作系统可以看作资源分配器</h5><ul>
+<li>资源类型: CPU时间, 内存空间,文件存储空间,I/O设备等</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<hr>
+<h3 id="操作系统的定义-1"><a href="#操作系统的定义-1" class="headerlink" title="操作系统的定义"></a>操作系统的定义</h3><blockquote>
+<ul>
+<li><h5 id="操作系统的存在目的-原因-定义的一个出发点"><a href="#操作系统的存在目的-原因-定义的一个出发点" class="headerlink" title="操作系统的存在目的/原因(定义的一个出发点)"></a>操作系统的存在目的/原因(定义的一个出发点)</h5><ul>
+<li><p>操作系统的存在是因为提供了合理的方式解决创建可用于计算系统的问题</p>
+</li>
+<li><p>计算机系统的根本目的是:执行用户程序并且更容易的解决用户问题</p>
+</li>
+<li><p>计算机硬件本身不容易使用,因此开发了应用软件,这些应用软件需要的共同操作的功能被组成一个软件模块:操作系统.</p>
+</li>
+</ul>
+</li>
+<li><h5 id="操作系统的定义-2"><a href="#操作系统的定义-2" class="headerlink" title="操作系统的定义"></a>操作系统的定义</h5><ul>
+<li>操作系统不存在一个明确的定义</li>
+<li>一个简单观点: 操作系统包括你预定的一个操作系统时销售商发生的所有一切</li>
+<li>一个公认定义:操作系统是一直运行在计算机上的程序(通常称为内核(kernel))</li>
+</ul>
+</li>
+</ul>
+<hr>
+</blockquote>
+</blockquote>
+<h2 id="1-2计算机系统的组成"><a href="#1-2计算机系统的组成" class="headerlink" title="1.2计算机系统的组成"></a>1.2计算机系统的组成</h2></blockquote>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="https://xipurewhite.github.io/2020/02/29/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%A6%82%E5%BF%B5%E7%9A%84%E5%AD%A6%E4%B9%A0-0-%E7%A0%94%E7%A9%B6%E4%B8%BB%E9%A2%98/" rel="next" title="操作系统概念的学习-0-研究主题">
+                <i class="fa fa-chevron-left"></i> 操作系统概念的学习-0-研究主题
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="https://xipurewhite.github.io/[object%20Object]"
+                alt="XIPureWhite" />
+            
+              <p class="site-author-name" itemprop="name">XIPureWhite</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="https://xipurewhite.github.io/archives/%20">
+              
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="https://xipurewhite.github.io/categories/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="https://xipurewhite.github.io/tags/index.html">
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#操作系统概念的学习-1-1-导论"><span class="nav-number">1.</span> <span class="nav-text">[操作系统概念的学习] 1_1-导论</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#章节目录"><span class="nav-number">1.1.</span> <span class="nav-text">章节目录</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#目录"><span class="nav-number">1.1.1.</span> <span class="nav-text">目录</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#操作系统的功能"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">操作系统的功能</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#用户视角"><span class="nav-number">1.1.1.1.1.</span> <span class="nav-text">用户视角</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#系统视角"><span class="nav-number">1.1.1.1.2.</span> <span class="nav-text">系统视角</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#操作系统的定义"><span class="nav-number">1.1.1.1.3.</span> <span class="nav-text">操作系统的定义</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#计算机系统的组成"><span class="nav-number">1.1.1.2.</span> <span class="nav-text">计算机系统的组成</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#计算机系统操作"><span class="nav-number">1.1.1.2.1.</span> <span class="nav-text">计算机系统操作</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#存储结构"><span class="nav-number">1.1.1.2.2.</span> <span class="nav-text">存储结构</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#I-O控制"><span class="nav-number">1.1.1.2.3.</span> <span class="nav-text">I&#x2F;O控制</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#计算机系统的体系结构"><span class="nav-number">1.1.1.3.</span> <span class="nav-text">计算机系统的体系结构</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#单处理器系统"><span class="nav-number">1.1.1.3.1.</span> <span class="nav-text">单处理器系统</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#多处理器系统"><span class="nav-number">1.1.1.3.2.</span> <span class="nav-text">多处理器系统</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#集群系统"><span class="nav-number">1.1.1.3.3.</span> <span class="nav-text">集群系统</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#操作系统的结构"><span class="nav-number">1.1.1.4.</span> <span class="nav-text">操作系统的结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#操作系统的执行"><span class="nav-number">1.1.1.5.</span> <span class="nav-text">操作系统的执行</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#双重模式操作"><span class="nav-number">1.1.1.5.1.</span> <span class="nav-text">双重模式操作</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#定时器"><span class="nav-number">1.1.1.5.2.</span> <span class="nav-text">定时器</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#进程管理"><span class="nav-number">1.1.1.6.</span> <span class="nav-text">进程管理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#内存管理"><span class="nav-number">1.1.1.7.</span> <span class="nav-text">内存管理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#存储管理"><span class="nav-number">1.1.1.8.</span> <span class="nav-text">存储管理</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#文件系统管理"><span class="nav-number">1.1.1.8.1.</span> <span class="nav-text">文件系统管理</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#大容量存储器管理"><span class="nav-number">1.1.1.8.2.</span> <span class="nav-text">大容量存储器管理</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#高速缓存"><span class="nav-number">1.1.1.8.3.</span> <span class="nav-text">高速缓存</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#I-O系统"><span class="nav-number">1.1.1.8.4.</span> <span class="nav-text">I&#x2F;O系统</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#保护和安全"><span class="nav-number">1.1.1.9.</span> <span class="nav-text">保护和安全</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#内核数据结构"><span class="nav-number">1.1.1.10.</span> <span class="nav-text">内核数据结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#计算环境"><span class="nav-number">1.1.1.11.</span> <span class="nav-text">计算环境</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#传统计算"><span class="nav-number">1.1.1.11.1.</span> <span class="nav-text">传统计算</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#客户机-服务器计算"><span class="nav-number">1.1.1.11.2.</span> <span class="nav-text">客户机-服务器计算</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#对等计算"><span class="nav-number">1.1.1.11.3.</span> <span class="nav-text">对等计算</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#基于Web的计算"><span class="nav-number">1.1.1.11.4.</span> <span class="nav-text">基于Web的计算</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#开源操作系统"><span class="nav-number">1.1.1.12.</span> <span class="nav-text">开源操作系统</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#章节内容"><span class="nav-number">1.2.</span> <span class="nav-text">章节内容</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1操作系统的功能"><span class="nav-number">1.3.</span> <span class="nav-text">1.1操作系统的功能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#引言"><span class="nav-number">1.3.1.</span> <span class="nav-text">引言</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#计算机系统的构成组件"><span class="nav-number">1.3.1.1.</span> <span class="nav-text">计算机系统的构成组件</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#计算机硬件"><span class="nav-number">1.3.1.1.1.</span> <span class="nav-text">计算机硬件</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#操作系统"><span class="nav-number">1.3.1.1.2.</span> <span class="nav-text">操作系统</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#系统程序"><span class="nav-number">1.3.1.1.3.</span> <span class="nav-text">系统程序</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#应用程序和用户"><span class="nav-number">1.3.1.1.4.</span> <span class="nav-text">应用程序和用户</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#关系"><span class="nav-number">1.3.1.2.</span> <span class="nav-text">关系:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#计算机系统组件的层次"><span class="nav-number">1.3.1.3.</span> <span class="nav-text">计算机系统组件的层次</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用户视角-1"><span class="nav-number">1.3.2.</span> <span class="nav-text">用户视角</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#PC计算机的设计"><span class="nav-number">1.3.2.1.</span> <span class="nav-text">PC计算机的设计</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#用户使用方便-次要的是性能"><span class="nav-number">1.3.2.1.1.</span> <span class="nav-text">用户使用方便,次要的是性能</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#不在乎资源利用"><span class="nav-number">1.3.2.1.2.</span> <span class="nav-text">不在乎资源利用</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#影响因素"><span class="nav-number">1.3.2.2.</span> <span class="nav-text">影响因素</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#系统视角-1"><span class="nav-number">1.3.3.</span> <span class="nav-text">系统视角</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#操作系统是和硬件紧密相连的程序"><span class="nav-number">1.3.3.0.1.</span> <span class="nav-text">操作系统是和硬件紧密相连的程序</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#操作系统可以看作资源分配器"><span class="nav-number">1.3.3.0.2.</span> <span class="nav-text">操作系统可以看作资源分配器</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#操作系统的定义-1"><span class="nav-number">1.3.4.</span> <span class="nav-text">操作系统的定义</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#操作系统的存在目的-原因-定义的一个出发点"><span class="nav-number">1.3.4.0.1.</span> <span class="nav-text">操作系统的存在目的&#x2F;原因(定义的一个出发点)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#操作系统的定义-2"><span class="nav-number">1.3.4.0.2.</span> <span class="nav-text">操作系统的定义</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2计算机系统的组成"><span class="nav-number">1.4.</span> <span class="nav-text">1.2计算机系统的组成</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">XIPureWhite</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="https://xipurewhite.github.io/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="https://xipurewhite.github.io/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="https://xipurewhite.github.io/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="https://xipurewhite.github.io/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="https://xipurewhite.github.io/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="https://xipurewhite.github.io/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="https://xipurewhite.github.io/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="https://xipurewhite.github.io/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="https://xipurewhite.github.io/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="https://xipurewhite.github.io/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="https://xipurewhite.github.io/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="https://xipurewhite.github.io/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="https://xipurewhite.github.io/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
