@@ -83,15 +83,17 @@
 
 
 
-<meta name="description" content="[操作系统概念的学习] 1_1-导论 章节目录 目录  操作系统的功能 用户视角 系统视角 操作系统的定义   计算机系统的组成 计算机系统操作 存储结构 I&#x2F;O控制   计算机系统的体系结构 单处理器系统 多处理器系统 集群系统   操作系统的结构 操作系统的执行 双重模式操作 定时器   进程管理 内存管理 存储管理 文件系统管理 大容量存储器管理 高速缓存 I&#x2F;O系统   保护和安全 内核数">
+<meta name="description" content="[操作系统概念的学习] 1_1-导论 章节目录 目录  操作系统的功能 用户视角 系统视角 操作系统的定义   计算机系统的组成 计算机系统的运行 存储结构 I&#x2F;O结构   计算机系统的体系结构 单处理器系统 多处理器系统 集群系统   操作系统的结构 操作系统的执行 双重模式操作 定时器   进程管理 内存管理 存储管理 文件系统管理 大容量存储器管理 高速缓存 I&#x2F;O系统   保护和安全 内核">
 <meta property="og:type" content="article">
 <meta property="og:title" content="操作系统概念的学习-1-1-导论">
 <meta property="og:url" content="https://xipurewhite.github.io/2020/03/01/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%A6%82%E5%BF%B5%E7%9A%84%E5%AD%A6%E4%B9%A0-1-1-%E5%AF%BC%E8%AE%BA/index.html">
 <meta property="og:site_name" content="XIPureWhite Home">
-<meta property="og:description" content="[操作系统概念的学习] 1_1-导论 章节目录 目录  操作系统的功能 用户视角 系统视角 操作系统的定义   计算机系统的组成 计算机系统操作 存储结构 I&#x2F;O控制   计算机系统的体系结构 单处理器系统 多处理器系统 集群系统   操作系统的结构 操作系统的执行 双重模式操作 定时器   进程管理 内存管理 存储管理 文件系统管理 大容量存储器管理 高速缓存 I&#x2F;O系统   保护和安全 内核数">
+<meta property="og:description" content="[操作系统概念的学习] 1_1-导论 章节目录 目录  操作系统的功能 用户视角 系统视角 操作系统的定义   计算机系统的组成 计算机系统的运行 存储结构 I&#x2F;O结构   计算机系统的体系结构 单处理器系统 多处理器系统 集群系统   操作系统的结构 操作系统的执行 双重模式操作 定时器   进程管理 内存管理 存储管理 文件系统管理 大容量存储器管理 高速缓存 I&#x2F;O系统   保护和安全 内核">
 <meta property="og:image" content="https://xipurewhite.github.io/2020/03/01/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%A6%82%E5%BF%B5%E7%9A%84%E5%AD%A6%E4%B9%A0-1-1-%E5%AF%BC%E8%AE%BA/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%A6%82%E5%BF%B5_1_1.png">
+<meta property="og:image" content="https://xipurewhite.github.io/2020/03/01/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%A6%82%E5%BF%B5%E7%9A%84%E5%AD%A6%E4%B9%A0-1-1-%E5%AF%BC%E8%AE%BA/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%A6%82%E5%BF%B5_1_2.png">
+<meta property="og:image" content="https://xipurewhite.github.io/2020/03/01/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%A6%82%E5%BF%B5%E7%9A%84%E5%AD%A6%E4%B9%A0-1-1-%E5%AF%BC%E8%AE%BA/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%A6%82%E5%BF%B5_1_3.png">
 <meta property="article:published_time" content="2020-03-01T13:45:26.000Z">
-<meta property="article:modified_time" content="2020-03-01T14:04:59.966Z">
+<meta property="article:modified_time" content="2020-03-02T15:14:33.568Z">
 <meta property="article:author" content="XIPureWhite">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://xipurewhite.github.io/2020/03/01/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%A6%82%E5%BF%B5%E7%9A%84%E5%AD%A6%E4%B9%A0-1-1-%E5%AF%BC%E8%AE%BA/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%A6%82%E5%BF%B5_1_1.png">
@@ -397,9 +399,9 @@
 </ul>
 </li>
 <li><h4 id="计算机系统的组成"><a href="#计算机系统的组成" class="headerlink" title="计算机系统的组成"></a>计算机系统的组成</h4><ul>
-<li><h5 id="计算机系统操作"><a href="#计算机系统操作" class="headerlink" title="计算机系统操作"></a>计算机系统操作</h5></li>
+<li><h5 id="计算机系统的运行"><a href="#计算机系统的运行" class="headerlink" title="计算机系统的运行"></a>计算机系统的运行</h5></li>
 <li><h5 id="存储结构"><a href="#存储结构" class="headerlink" title="存储结构"></a>存储结构</h5></li>
-<li><h5 id="I-O控制"><a href="#I-O控制" class="headerlink" title="I/O控制"></a>I/O控制</h5></li>
+<li><h5 id="I-O结构"><a href="#I-O结构" class="headerlink" title="I/O结构"></a>I/O结构</h5></li>
 </ul>
 </li>
 <li><h4 id="计算机系统的体系结构"><a href="#计算机系统的体系结构" class="headerlink" title="计算机系统的体系结构"></a>计算机系统的体系结构</h4><ul>
@@ -511,7 +513,164 @@
 <hr>
 </blockquote>
 </blockquote>
-<h2 id="1-2计算机系统的组成"><a href="#1-2计算机系统的组成" class="headerlink" title="1.2计算机系统的组成"></a>1.2计算机系统的组成</h2></blockquote>
+<hr>
+<h2 id="1-2计算机系统的组成"><a href="#1-2计算机系统的组成" class="headerlink" title="1.2计算机系统的组成"></a>1.2计算机系统的组成</h2><blockquote>
+<h3 id="计算机系统的运行-1"><a href="#计算机系统的运行-1" class="headerlink" title="计算机系统的运行"></a>计算机系统的运行</h3><blockquote>
+<h4 id="计算机的硬件结构"><a href="#计算机的硬件结构" class="headerlink" title="计算机的硬件结构"></a>计算机的硬件结构</h4><ul>
+<li><h5 id="一个或多个中央处理器-CPU"><a href="#一个或多个中央处理器-CPU" class="headerlink" title="一个或多个中央处理器(CPU)"></a>一个或多个中央处理器(CPU)</h5></li>
+<li><h5 id="若干个设备控制器"><a href="#若干个设备控制器" class="headerlink" title="若干个设备控制器"></a>若干个设备控制器</h5></li>
+<li><h5 id="不同组件通过总线相连"><a href="#不同组件通过总线相连" class="headerlink" title="不同组件通过总线相连"></a>不同组件通过总线相连</h5></li>
+<li><h5 id="总线提供了共享内存的访问"><a href="#总线提供了共享内存的访问" class="headerlink" title="总线提供了共享内存的访问"></a>总线提供了共享内存的访问</h5></li>
+</ul>
+<p><img src="%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%A6%82%E5%BF%B5_1_2.png" alt=""></p>
+<h4 id="计算机系统的运行过程"><a href="#计算机系统的运行过程" class="headerlink" title="计算机系统的运行过程"></a>计算机系统的运行过程</h4><ul>
+<li><h5 id="1-计算机电源被打开或重启"><a href="#1-计算机电源被打开或重启" class="headerlink" title="1.计算机电源被打开或重启"></a>1.计算机电源被打开或重启</h5></li>
+<li><h5 id="2-运行初始程序或引导程序"><a href="#2-运行初始程序或引导程序" class="headerlink" title="2.运行初始程序或引导程序"></a>2.运行初始程序或引导程序</h5></li>
+<li><p>一般位于计算机的固件(只读内存或电可擦可编程只读内存)</p>
+</li>
+<li><h5 id="3-初始程序或引导程序初始化系统的各个组件"><a href="#3-初始程序或引导程序初始化系统的各个组件" class="headerlink" title="3.初始程序或引导程序初始化系统的各个组件"></a>3.初始程序或引导程序初始化系统的各个组件</h5></li>
+<li><p>组件: 从CPU寄存器,设备控制器到内存内容</p>
+</li>
+<li><h5 id="4-引导程序加载操作系统内核到内存并执行"><a href="#4-引导程序加载操作系统内核到内存并执行" class="headerlink" title="4.引导程序加载操作系统内核到内存并执行"></a>4.引导程序加载操作系统内核到内存并执行</h5></li>
+<li><h5 id="5-操作系统位系统与用户提供服务"><a href="#5-操作系统位系统与用户提供服务" class="headerlink" title="5.操作系统位系统与用户提供服务"></a>5.操作系统位系统与用户提供服务</h5></li>
+<li><h6 id="6-系统程序提供服务"><a href="#6-系统程序提供服务" class="headerlink" title="6.系统程序提供服务"></a>6.系统程序提供服务</h6></li>
+<li><p>系统程序启动时加载到内存称为系统进程或系统后台程序,声明周期和内核相同</p>
+</li>
+</ul>
+<h4 id="硬件或软件的事件"><a href="#硬件或软件的事件" class="headerlink" title="硬件或软件的事件"></a>硬件或软件的事件</h4><blockquote>
+<h5 id="中断机制"><a href="#中断机制" class="headerlink" title="中断机制"></a>中断机制</h5><ul>
+<li><p>事件的发送通常通过中断来通知</p>
+</li>
+<li><p>不同计算机都有自己的中断机制</p>
+</li>
+<li><p>中断将控制转移到合适的中断服务程序</p>
+<ul>
+<li>存在一个”通用程序”用于检查中断信息,并调用特定的中断处理程序</li>
+<li>出于效率考虑,并且一般预先定义的中断不多,”通用程序”其实是一个指针表,通过指针表间接调用中断处理程序而无需其他中介程序.</li>
+<li>这个表称作中断向量表,通过唯一的索引号来寻址中断处理程序的地址</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<ul>
+<li><h5 id="方式"><a href="#方式" class="headerlink" title="方式"></a>方式</h5></li>
+<li><blockquote>
+<ul>
+<li><h5 id="中断"><a href="#中断" class="headerlink" title="中断"></a>中断</h5><ul>
+<li>硬件可随时通过系统总线发送信号到CPU,触发中断</li>
+</ul>
+</li>
+<li><h5 id="系统调用-监督程序调用"><a href="#系统调用-监督程序调用" class="headerlink" title="系统调用(监督程序调用)"></a>系统调用(监督程序调用)</h5><ul>
+<li>软件通过系统调用触发中断</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+</li>
+<li><h5 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h5></li>
+<li><blockquote>
+<ul>
+<li><h5 id="1-CPU被中断-停止当前任务"><a href="#1-CPU被中断-停止当前任务" class="headerlink" title="1.CPU被中断,停止当前任务"></a>1.CPU被中断,停止当前任务</h5></li>
+<li><h5 id="2-跳转到固定位置执行中断服务程序"><a href="#2-跳转到固定位置执行中断服务程序" class="headerlink" title="2.跳转到固定位置执行中断服务程序"></a>2.跳转到固定位置执行中断服务程序</h5></li>
+<li><h5 id="3-执行完成中断服务程序后CPU回到原来任务-重写执行被中断的计算"><a href="#3-执行完成中断服务程序后CPU回到原来任务-重写执行被中断的计算" class="headerlink" title="3.执行完成中断服务程序后CPU回到原来任务,重写执行被中断的计算"></a>3.执行完成中断服务程序后CPU回到原来任务,重写执行被中断的计算</h5></li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<h3 id="存储结构-1"><a href="#存储结构-1" class="headerlink" title="存储结构"></a>存储结构</h3><blockquote>
+<h4 id="存储结构的组成"><a href="#存储结构的组成" class="headerlink" title="存储结构的组成"></a>存储结构的组成</h4><ul>
+<li><h5 id="寄存器"><a href="#寄存器" class="headerlink" title="寄存器"></a>寄存器</h5></li>
+<li><h5 id="内存"><a href="#内存" class="headerlink" title="内存"></a>内存</h5></li>
+<li><h5 id="磁盘"><a href="#磁盘" class="headerlink" title="磁盘"></a>磁盘</h5></li>
+<li><h5 id="高速缓存-CD-ROM-磁带-闪存…"><a href="#高速缓存-CD-ROM-磁带-闪存…" class="headerlink" title="高速缓存,CD-ROM,磁带,闪存…"></a>高速缓存,CD-ROM,磁带,闪存…</h5></li>
+</ul>
+<h4 id="内存-1"><a href="#内存-1" class="headerlink" title="内存"></a>内存</h4><ul>
+<li><h5 id="CPU只能从内存中加载指令"><a href="#CPU只能从内存中加载指令" class="headerlink" title="CPU只能从内存中加载指令"></a>CPU只能从内存中加载指令</h5></li>
+<li><h5 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h5><ul>
+<li>可读写内存(RAM)<ul>
+<li>大多运行的计算机程序所在位置</li>
+</ul>
+</li>
+<li>只读内存(ROM)</li>
+</ul>
+</li>
+</ul>
+<h4 id="冯-诺依曼体系结构的指令执行周期"><a href="#冯-诺依曼体系结构的指令执行周期" class="headerlink" title="冯.诺依曼体系结构的指令执行周期"></a>冯.诺依曼体系结构的指令执行周期</h4><ul>
+<li><h5 id="1-CPU从内存中读取指令并存到指令寄存器"><a href="#1-CPU从内存中读取指令并存到指令寄存器" class="headerlink" title="1.CPU从内存中读取指令并存到指令寄存器"></a>1.CPU从内存中读取指令并存到指令寄存器</h5></li>
+<li><h5 id="2-指令进行解码"><a href="#2-指令进行解码" class="headerlink" title="2.指令进行解码"></a>2.指令进行解码</h5><ul>
+<li>可能会从内存获取操作数据并存到内部寄存器</li>
+<li>指令完成对数据的执行后,结果可能存到内存</li>
+</ul>
+</li>
+<li><h5 id="3-指令无法永驻内存"><a href="#3-指令无法永驻内存" class="headerlink" title="3.指令无法永驻内存"></a>3.指令无法永驻内存</h5><ul>
+<li>内存通常太少,不能永久保存所需要的程序和数据</li>
+<li>内存是易失性存储器,断电就会丢失内容</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h4 id="磁盘-1"><a href="#磁盘-1" class="headerlink" title="磁盘"></a>磁盘</h4><ul>
+<li><h5 id="存储应用和数据"><a href="#存储应用和数据" class="headerlink" title="存储应用和数据"></a>存储应用和数据</h5><ul>
+<li>大多数程序(系统与应用)都保存在磁盘上</li>
+<li>程序执行时加载到内存</li>
+</ul>
+</li>
+<li><h5 id="依据存储性质分类"><a href="#依据存储性质分类" class="headerlink" title="依据存储性质分类"></a>依据存储性质分类</h5><ul>
+<li>易失性存储器</li>
+<li>非易失性存储器</li>
+</ul>
+</li>
+<li><h5 id="存储器层次"><a href="#存储器层次" class="headerlink" title="存储器层次"></a>存储器层次</h5><p><img src="%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%A6%82%E5%BF%B5_1_3.png" alt=""></p>
+<ul>
+<li>层次越高,价格越贵,速度越快</li>
+</ul>
+</li>
+</ul>
+<h4 id="固态磁盘"><a href="#固态磁盘" class="headerlink" title="固态磁盘"></a>固态磁盘</h4><ul>
+<li><h5 id="比磁盘快-非易失性存储器"><a href="#比磁盘快-非易失性存储器" class="headerlink" title="比磁盘快,非易失性存储器"></a>比磁盘快,非易失性存储器</h5></li>
+<li><h5 id="分类-1"><a href="#分类-1" class="headerlink" title="分类"></a>分类</h5><ul>
+<li>某一种类型固态磁盘(别问是什么)<ul>
+<li>结构上有一个隐藏磁盘和一个备份电池</li>
+<li>外部电源中断时,固态磁盘控制器将数据从RAM复制到磁盘,外部电源恢复后,控制器将数据复制到RAM</li>
+</ul>
+</li>
+<li>闪存<ul>
+<li>在照相机,PDA和机器人中常用,速度比DRAM慢</li>
+<li>但无需电源以保存内容</li>
+</ul>
+</li>
+<li>NVRAM<ul>
+<li>俱有备份电池的DRAM</li>
+<li>非易失性(只要电池有电)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<hr>
+<h3 id="I-O控制"><a href="#I-O控制" class="headerlink" title="I/O控制"></a>I/O控制</h3><ul>
+<li><h5 id="存储器只是众多计算机I-O设备的一种"><a href="#存储器只是众多计算机I-O设备的一种" class="headerlink" title="存储器只是众多计算机I/O设备的一种"></a>存储器只是众多计算机I/O设备的一种</h5></li>
+<li><h5 id="操作系统大部分代码专门用于I-O管理-因为它对系统的可靠性和性能至关重要的"><a href="#操作系统大部分代码专门用于I-O管理-因为它对系统的可靠性和性能至关重要的" class="headerlink" title="操作系统大部分代码专门用于I/O管理,因为它对系统的可靠性和性能至关重要的"></a>操作系统大部分代码专门用于I/O管理,因为它对系统的可靠性和性能至关重要的</h5></li>
+</ul>
+<h4 id="I-O系统的结构"><a href="#I-O系统的结构" class="headerlink" title="I/O系统的结构"></a>I/O系统的结构</h4><ul>
+<li><h5 id="一个或多个中央处理器-CPU-1"><a href="#一个或多个中央处理器-CPU-1" class="headerlink" title="一个或多个中央处理器(CPU)"></a>一个或多个中央处理器(CPU)</h5></li>
+<li><h5 id="若干个设备控制器-1"><a href="#若干个设备控制器-1" class="headerlink" title="若干个设备控制器"></a>若干个设备控制器</h5></li>
+<li><h5 id="不同组件通过总线相连-1"><a href="#不同组件通过总线相连-1" class="headerlink" title="不同组件通过总线相连"></a>不同组件通过总线相连</h5></li>
+</ul>
+<h4 id="小型计算机系统接口-SCSI"><a href="#小型计算机系统接口-SCSI" class="headerlink" title="小型计算机系统接口(SCSI)"></a>小型计算机系统接口(SCSI)</h4><ul>
+<li><h5 id="控制器可连接7个或更多设备"><a href="#控制器可连接7个或更多设备" class="headerlink" title="控制器可连接7个或更多设备"></a>控制器可连接7个或更多设备</h5></li>
+<li><h5 id="每个设备控制器维护一定两本地缓冲存储和一组特定用途的寄存器"><a href="#每个设备控制器维护一定两本地缓冲存储和一组特定用途的寄存器" class="headerlink" title="每个设备控制器维护一定两本地缓冲存储和一组特定用途的寄存器"></a>每个设备控制器维护一定两本地缓冲存储和一组特定用途的寄存器</h5></li>
+<li><h5 id="设备控制器负责在所控制的外围设备和本地缓冲之间传递数据"><a href="#设备控制器负责在所控制的外围设备和本地缓冲之间传递数据" class="headerlink" title="设备控制器负责在所控制的外围设备和本地缓冲之间传递数据"></a>设备控制器负责在所控制的外围设备和本地缓冲之间传递数据</h5></li>
+<li><h5 id="操作系统为每个设备控制器提供一个设备驱动程序"><a href="#操作系统为每个设备控制器提供一个设备驱动程序" class="headerlink" title="操作系统为每个设备控制器提供一个设备驱动程序"></a>操作系统为每个设备控制器提供一个设备驱动程序</h5><ul>
+<li>设备驱动程序负责设备控制器</li>
+<li>设备驱动程序为操作系统的其他部分提供统一的设备访问接口</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+</blockquote>
+</blockquote>
 
       
     </div>
@@ -680,7 +839,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#操作系统概念的学习-1-1-导论"><span class="nav-number">1.</span> <span class="nav-text">[操作系统概念的学习] 1_1-导论</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#章节目录"><span class="nav-number">1.1.</span> <span class="nav-text">章节目录</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#目录"><span class="nav-number">1.1.1.</span> <span class="nav-text">目录</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#操作系统的功能"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">操作系统的功能</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#用户视角"><span class="nav-number">1.1.1.1.1.</span> <span class="nav-text">用户视角</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#系统视角"><span class="nav-number">1.1.1.1.2.</span> <span class="nav-text">系统视角</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#操作系统的定义"><span class="nav-number">1.1.1.1.3.</span> <span class="nav-text">操作系统的定义</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#计算机系统的组成"><span class="nav-number">1.1.1.2.</span> <span class="nav-text">计算机系统的组成</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#计算机系统操作"><span class="nav-number">1.1.1.2.1.</span> <span class="nav-text">计算机系统操作</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#存储结构"><span class="nav-number">1.1.1.2.2.</span> <span class="nav-text">存储结构</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#I-O控制"><span class="nav-number">1.1.1.2.3.</span> <span class="nav-text">I&#x2F;O控制</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#计算机系统的体系结构"><span class="nav-number">1.1.1.3.</span> <span class="nav-text">计算机系统的体系结构</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#单处理器系统"><span class="nav-number">1.1.1.3.1.</span> <span class="nav-text">单处理器系统</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#多处理器系统"><span class="nav-number">1.1.1.3.2.</span> <span class="nav-text">多处理器系统</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#集群系统"><span class="nav-number">1.1.1.3.3.</span> <span class="nav-text">集群系统</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#操作系统的结构"><span class="nav-number">1.1.1.4.</span> <span class="nav-text">操作系统的结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#操作系统的执行"><span class="nav-number">1.1.1.5.</span> <span class="nav-text">操作系统的执行</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#双重模式操作"><span class="nav-number">1.1.1.5.1.</span> <span class="nav-text">双重模式操作</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#定时器"><span class="nav-number">1.1.1.5.2.</span> <span class="nav-text">定时器</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#进程管理"><span class="nav-number">1.1.1.6.</span> <span class="nav-text">进程管理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#内存管理"><span class="nav-number">1.1.1.7.</span> <span class="nav-text">内存管理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#存储管理"><span class="nav-number">1.1.1.8.</span> <span class="nav-text">存储管理</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#文件系统管理"><span class="nav-number">1.1.1.8.1.</span> <span class="nav-text">文件系统管理</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#大容量存储器管理"><span class="nav-number">1.1.1.8.2.</span> <span class="nav-text">大容量存储器管理</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#高速缓存"><span class="nav-number">1.1.1.8.3.</span> <span class="nav-text">高速缓存</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#I-O系统"><span class="nav-number">1.1.1.8.4.</span> <span class="nav-text">I&#x2F;O系统</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#保护和安全"><span class="nav-number">1.1.1.9.</span> <span class="nav-text">保护和安全</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#内核数据结构"><span class="nav-number">1.1.1.10.</span> <span class="nav-text">内核数据结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#计算环境"><span class="nav-number">1.1.1.11.</span> <span class="nav-text">计算环境</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#传统计算"><span class="nav-number">1.1.1.11.1.</span> <span class="nav-text">传统计算</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#客户机-服务器计算"><span class="nav-number">1.1.1.11.2.</span> <span class="nav-text">客户机-服务器计算</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#对等计算"><span class="nav-number">1.1.1.11.3.</span> <span class="nav-text">对等计算</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#基于Web的计算"><span class="nav-number">1.1.1.11.4.</span> <span class="nav-text">基于Web的计算</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#开源操作系统"><span class="nav-number">1.1.1.12.</span> <span class="nav-text">开源操作系统</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#章节内容"><span class="nav-number">1.2.</span> <span class="nav-text">章节内容</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1操作系统的功能"><span class="nav-number">1.3.</span> <span class="nav-text">1.1操作系统的功能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#引言"><span class="nav-number">1.3.1.</span> <span class="nav-text">引言</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#计算机系统的构成组件"><span class="nav-number">1.3.1.1.</span> <span class="nav-text">计算机系统的构成组件</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#计算机硬件"><span class="nav-number">1.3.1.1.1.</span> <span class="nav-text">计算机硬件</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#操作系统"><span class="nav-number">1.3.1.1.2.</span> <span class="nav-text">操作系统</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#系统程序"><span class="nav-number">1.3.1.1.3.</span> <span class="nav-text">系统程序</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#应用程序和用户"><span class="nav-number">1.3.1.1.4.</span> <span class="nav-text">应用程序和用户</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#关系"><span class="nav-number">1.3.1.2.</span> <span class="nav-text">关系:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#计算机系统组件的层次"><span class="nav-number">1.3.1.3.</span> <span class="nav-text">计算机系统组件的层次</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用户视角-1"><span class="nav-number">1.3.2.</span> <span class="nav-text">用户视角</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#PC计算机的设计"><span class="nav-number">1.3.2.1.</span> <span class="nav-text">PC计算机的设计</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#用户使用方便-次要的是性能"><span class="nav-number">1.3.2.1.1.</span> <span class="nav-text">用户使用方便,次要的是性能</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#不在乎资源利用"><span class="nav-number">1.3.2.1.2.</span> <span class="nav-text">不在乎资源利用</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#影响因素"><span class="nav-number">1.3.2.2.</span> <span class="nav-text">影响因素</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#系统视角-1"><span class="nav-number">1.3.3.</span> <span class="nav-text">系统视角</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#操作系统是和硬件紧密相连的程序"><span class="nav-number">1.3.3.0.1.</span> <span class="nav-text">操作系统是和硬件紧密相连的程序</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#操作系统可以看作资源分配器"><span class="nav-number">1.3.3.0.2.</span> <span class="nav-text">操作系统可以看作资源分配器</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#操作系统的定义-1"><span class="nav-number">1.3.4.</span> <span class="nav-text">操作系统的定义</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#操作系统的存在目的-原因-定义的一个出发点"><span class="nav-number">1.3.4.0.1.</span> <span class="nav-text">操作系统的存在目的&#x2F;原因(定义的一个出发点)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#操作系统的定义-2"><span class="nav-number">1.3.4.0.2.</span> <span class="nav-text">操作系统的定义</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2计算机系统的组成"><span class="nav-number">1.4.</span> <span class="nav-text">1.2计算机系统的组成</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#操作系统概念的学习-1-1-导论"><span class="nav-number">1.</span> <span class="nav-text">[操作系统概念的学习] 1_1-导论</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#章节目录"><span class="nav-number">1.1.</span> <span class="nav-text">章节目录</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#目录"><span class="nav-number">1.1.1.</span> <span class="nav-text">目录</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#操作系统的功能"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">操作系统的功能</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#用户视角"><span class="nav-number">1.1.1.1.1.</span> <span class="nav-text">用户视角</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#系统视角"><span class="nav-number">1.1.1.1.2.</span> <span class="nav-text">系统视角</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#操作系统的定义"><span class="nav-number">1.1.1.1.3.</span> <span class="nav-text">操作系统的定义</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#计算机系统的组成"><span class="nav-number">1.1.1.2.</span> <span class="nav-text">计算机系统的组成</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#计算机系统的运行"><span class="nav-number">1.1.1.2.1.</span> <span class="nav-text">计算机系统的运行</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#存储结构"><span class="nav-number">1.1.1.2.2.</span> <span class="nav-text">存储结构</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#I-O结构"><span class="nav-number">1.1.1.2.3.</span> <span class="nav-text">I&#x2F;O结构</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#计算机系统的体系结构"><span class="nav-number">1.1.1.3.</span> <span class="nav-text">计算机系统的体系结构</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#单处理器系统"><span class="nav-number">1.1.1.3.1.</span> <span class="nav-text">单处理器系统</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#多处理器系统"><span class="nav-number">1.1.1.3.2.</span> <span class="nav-text">多处理器系统</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#集群系统"><span class="nav-number">1.1.1.3.3.</span> <span class="nav-text">集群系统</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#操作系统的结构"><span class="nav-number">1.1.1.4.</span> <span class="nav-text">操作系统的结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#操作系统的执行"><span class="nav-number">1.1.1.5.</span> <span class="nav-text">操作系统的执行</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#双重模式操作"><span class="nav-number">1.1.1.5.1.</span> <span class="nav-text">双重模式操作</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#定时器"><span class="nav-number">1.1.1.5.2.</span> <span class="nav-text">定时器</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#进程管理"><span class="nav-number">1.1.1.6.</span> <span class="nav-text">进程管理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#内存管理"><span class="nav-number">1.1.1.7.</span> <span class="nav-text">内存管理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#存储管理"><span class="nav-number">1.1.1.8.</span> <span class="nav-text">存储管理</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#文件系统管理"><span class="nav-number">1.1.1.8.1.</span> <span class="nav-text">文件系统管理</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#大容量存储器管理"><span class="nav-number">1.1.1.8.2.</span> <span class="nav-text">大容量存储器管理</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#高速缓存"><span class="nav-number">1.1.1.8.3.</span> <span class="nav-text">高速缓存</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#I-O系统"><span class="nav-number">1.1.1.8.4.</span> <span class="nav-text">I&#x2F;O系统</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#保护和安全"><span class="nav-number">1.1.1.9.</span> <span class="nav-text">保护和安全</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#内核数据结构"><span class="nav-number">1.1.1.10.</span> <span class="nav-text">内核数据结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#计算环境"><span class="nav-number">1.1.1.11.</span> <span class="nav-text">计算环境</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#传统计算"><span class="nav-number">1.1.1.11.1.</span> <span class="nav-text">传统计算</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#客户机-服务器计算"><span class="nav-number">1.1.1.11.2.</span> <span class="nav-text">客户机-服务器计算</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#对等计算"><span class="nav-number">1.1.1.11.3.</span> <span class="nav-text">对等计算</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#基于Web的计算"><span class="nav-number">1.1.1.11.4.</span> <span class="nav-text">基于Web的计算</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#开源操作系统"><span class="nav-number">1.1.1.12.</span> <span class="nav-text">开源操作系统</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#章节内容"><span class="nav-number">1.2.</span> <span class="nav-text">章节内容</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1操作系统的功能"><span class="nav-number">1.3.</span> <span class="nav-text">1.1操作系统的功能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#引言"><span class="nav-number">1.3.1.</span> <span class="nav-text">引言</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#计算机系统的构成组件"><span class="nav-number">1.3.1.1.</span> <span class="nav-text">计算机系统的构成组件</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#计算机硬件"><span class="nav-number">1.3.1.1.1.</span> <span class="nav-text">计算机硬件</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#操作系统"><span class="nav-number">1.3.1.1.2.</span> <span class="nav-text">操作系统</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#系统程序"><span class="nav-number">1.3.1.1.3.</span> <span class="nav-text">系统程序</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#应用程序和用户"><span class="nav-number">1.3.1.1.4.</span> <span class="nav-text">应用程序和用户</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#关系"><span class="nav-number">1.3.1.2.</span> <span class="nav-text">关系:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#计算机系统组件的层次"><span class="nav-number">1.3.1.3.</span> <span class="nav-text">计算机系统组件的层次</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用户视角-1"><span class="nav-number">1.3.2.</span> <span class="nav-text">用户视角</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#PC计算机的设计"><span class="nav-number">1.3.2.1.</span> <span class="nav-text">PC计算机的设计</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#用户使用方便-次要的是性能"><span class="nav-number">1.3.2.1.1.</span> <span class="nav-text">用户使用方便,次要的是性能</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#不在乎资源利用"><span class="nav-number">1.3.2.1.2.</span> <span class="nav-text">不在乎资源利用</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#影响因素"><span class="nav-number">1.3.2.2.</span> <span class="nav-text">影响因素</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#系统视角-1"><span class="nav-number">1.3.3.</span> <span class="nav-text">系统视角</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#操作系统是和硬件紧密相连的程序"><span class="nav-number">1.3.3.0.1.</span> <span class="nav-text">操作系统是和硬件紧密相连的程序</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#操作系统可以看作资源分配器"><span class="nav-number">1.3.3.0.2.</span> <span class="nav-text">操作系统可以看作资源分配器</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#操作系统的定义-1"><span class="nav-number">1.3.4.</span> <span class="nav-text">操作系统的定义</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#操作系统的存在目的-原因-定义的一个出发点"><span class="nav-number">1.3.4.0.1.</span> <span class="nav-text">操作系统的存在目的&#x2F;原因(定义的一个出发点)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#操作系统的定义-2"><span class="nav-number">1.3.4.0.2.</span> <span class="nav-text">操作系统的定义</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2计算机系统的组成"><span class="nav-number">1.4.</span> <span class="nav-text">1.2计算机系统的组成</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#计算机系统的运行-1"><span class="nav-number">1.4.1.</span> <span class="nav-text">计算机系统的运行</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#计算机的硬件结构"><span class="nav-number">1.4.1.1.</span> <span class="nav-text">计算机的硬件结构</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#一个或多个中央处理器-CPU"><span class="nav-number">1.4.1.1.1.</span> <span class="nav-text">一个或多个中央处理器(CPU)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#若干个设备控制器"><span class="nav-number">1.4.1.1.2.</span> <span class="nav-text">若干个设备控制器</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#不同组件通过总线相连"><span class="nav-number">1.4.1.1.3.</span> <span class="nav-text">不同组件通过总线相连</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#总线提供了共享内存的访问"><span class="nav-number">1.4.1.1.4.</span> <span class="nav-text">总线提供了共享内存的访问</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#计算机系统的运行过程"><span class="nav-number">1.4.1.2.</span> <span class="nav-text">计算机系统的运行过程</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-计算机电源被打开或重启"><span class="nav-number">1.4.1.2.1.</span> <span class="nav-text">1.计算机电源被打开或重启</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-运行初始程序或引导程序"><span class="nav-number">1.4.1.2.2.</span> <span class="nav-text">2.运行初始程序或引导程序</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-初始程序或引导程序初始化系统的各个组件"><span class="nav-number">1.4.1.2.3.</span> <span class="nav-text">3.初始程序或引导程序初始化系统的各个组件</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-引导程序加载操作系统内核到内存并执行"><span class="nav-number">1.4.1.2.4.</span> <span class="nav-text">4.引导程序加载操作系统内核到内存并执行</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-操作系统位系统与用户提供服务"><span class="nav-number">1.4.1.2.5.</span> <span class="nav-text">5.操作系统位系统与用户提供服务</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#6-系统程序提供服务"><span class="nav-number">1.4.1.2.5.1.</span> <span class="nav-text">6.系统程序提供服务</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#硬件或软件的事件"><span class="nav-number">1.4.1.3.</span> <span class="nav-text">硬件或软件的事件</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#中断机制"><span class="nav-number">1.4.1.3.1.</span> <span class="nav-text">中断机制</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#方式"><span class="nav-number">1.4.1.3.2.</span> <span class="nav-text">方式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#中断"><span class="nav-number">1.4.1.3.3.</span> <span class="nav-text">中断</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#系统调用-监督程序调用"><span class="nav-number">1.4.1.3.4.</span> <span class="nav-text">系统调用(监督程序调用)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#过程"><span class="nav-number">1.4.1.3.5.</span> <span class="nav-text">过程</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-CPU被中断-停止当前任务"><span class="nav-number">1.4.1.3.6.</span> <span class="nav-text">1.CPU被中断,停止当前任务</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-跳转到固定位置执行中断服务程序"><span class="nav-number">1.4.1.3.7.</span> <span class="nav-text">2.跳转到固定位置执行中断服务程序</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-执行完成中断服务程序后CPU回到原来任务-重写执行被中断的计算"><span class="nav-number">1.4.1.3.8.</span> <span class="nav-text">3.执行完成中断服务程序后CPU回到原来任务,重写执行被中断的计算</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#存储结构-1"><span class="nav-number">1.4.2.</span> <span class="nav-text">存储结构</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#存储结构的组成"><span class="nav-number">1.4.2.1.</span> <span class="nav-text">存储结构的组成</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#寄存器"><span class="nav-number">1.4.2.1.1.</span> <span class="nav-text">寄存器</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#内存"><span class="nav-number">1.4.2.1.2.</span> <span class="nav-text">内存</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#磁盘"><span class="nav-number">1.4.2.1.3.</span> <span class="nav-text">磁盘</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#高速缓存-CD-ROM-磁带-闪存…"><span class="nav-number">1.4.2.1.4.</span> <span class="nav-text">高速缓存,CD-ROM,磁带,闪存…</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#内存-1"><span class="nav-number">1.4.2.2.</span> <span class="nav-text">内存</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#CPU只能从内存中加载指令"><span class="nav-number">1.4.2.2.1.</span> <span class="nav-text">CPU只能从内存中加载指令</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#分类"><span class="nav-number">1.4.2.2.2.</span> <span class="nav-text">分类</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#冯-诺依曼体系结构的指令执行周期"><span class="nav-number">1.4.2.3.</span> <span class="nav-text">冯.诺依曼体系结构的指令执行周期</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-CPU从内存中读取指令并存到指令寄存器"><span class="nav-number">1.4.2.3.1.</span> <span class="nav-text">1.CPU从内存中读取指令并存到指令寄存器</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-指令进行解码"><span class="nav-number">1.4.2.3.2.</span> <span class="nav-text">2.指令进行解码</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-指令无法永驻内存"><span class="nav-number">1.4.2.3.3.</span> <span class="nav-text">3.指令无法永驻内存</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#磁盘-1"><span class="nav-number">1.4.2.4.</span> <span class="nav-text">磁盘</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#存储应用和数据"><span class="nav-number">1.4.2.4.1.</span> <span class="nav-text">存储应用和数据</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#依据存储性质分类"><span class="nav-number">1.4.2.4.2.</span> <span class="nav-text">依据存储性质分类</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#存储器层次"><span class="nav-number">1.4.2.4.3.</span> <span class="nav-text">存储器层次</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#固态磁盘"><span class="nav-number">1.4.2.5.</span> <span class="nav-text">固态磁盘</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#比磁盘快-非易失性存储器"><span class="nav-number">1.4.2.5.1.</span> <span class="nav-text">比磁盘快,非易失性存储器</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#分类-1"><span class="nav-number">1.4.2.5.2.</span> <span class="nav-text">分类</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#I-O控制"><span class="nav-number">1.4.3.</span> <span class="nav-text">I&#x2F;O控制</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#存储器只是众多计算机I-O设备的一种"><span class="nav-number">1.4.3.0.1.</span> <span class="nav-text">存储器只是众多计算机I&#x2F;O设备的一种</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#操作系统大部分代码专门用于I-O管理-因为它对系统的可靠性和性能至关重要的"><span class="nav-number">1.4.3.0.2.</span> <span class="nav-text">操作系统大部分代码专门用于I&#x2F;O管理,因为它对系统的可靠性和性能至关重要的</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#I-O系统的结构"><span class="nav-number">1.4.3.1.</span> <span class="nav-text">I&#x2F;O系统的结构</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#一个或多个中央处理器-CPU-1"><span class="nav-number">1.4.3.1.1.</span> <span class="nav-text">一个或多个中央处理器(CPU)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#若干个设备控制器-1"><span class="nav-number">1.4.3.1.2.</span> <span class="nav-text">若干个设备控制器</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#不同组件通过总线相连-1"><span class="nav-number">1.4.3.1.3.</span> <span class="nav-text">不同组件通过总线相连</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#小型计算机系统接口-SCSI"><span class="nav-number">1.4.3.2.</span> <span class="nav-text">小型计算机系统接口(SCSI)</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#控制器可连接7个或更多设备"><span class="nav-number">1.4.3.2.1.</span> <span class="nav-text">控制器可连接7个或更多设备</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#每个设备控制器维护一定两本地缓冲存储和一组特定用途的寄存器"><span class="nav-number">1.4.3.2.2.</span> <span class="nav-text">每个设备控制器维护一定两本地缓冲存储和一组特定用途的寄存器</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#设备控制器负责在所控制的外围设备和本地缓冲之间传递数据"><span class="nav-number">1.4.3.2.3.</span> <span class="nav-text">设备控制器负责在所控制的外围设备和本地缓冲之间传递数据</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#操作系统为每个设备控制器提供一个设备驱动程序"><span class="nav-number">1.4.3.2.4.</span> <span class="nav-text">操作系统为每个设备控制器提供一个设备驱动程序</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>
