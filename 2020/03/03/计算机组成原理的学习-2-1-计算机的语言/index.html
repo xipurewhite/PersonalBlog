@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="https://xipurewhite.github.io/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="https://xipurewhite.github.io/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="https://xipurewhite.github.io/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="https://xipurewhite.github.io/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="https://xipurewhite.github.io/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="https://xipurewhite.github.io/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="https://xipurewhite.github.io/images/logo.svg?v=5.1.4" color="#222">
+
+
+  <link rel="manifest" href="https://xipurewhite.github.io/images/manifest.json">
+
+
+  <meta name="msapplication-config" content="https://xipurewhite.github.io/images/browserconfig.xml" />
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="[计算机组成原理的学习]1_1-计算机概的语言 章节目录 计算机的语言  引言 计算机硬件的操作数 有符号数和无符号数 计算机中指令的表示 逻辑操作 决策指令 计算机硬件对过程的支持    章节内容 引言 指令集 一个给定的计算机体系结构所包含的指令的集合 机器语言种类繁多,但差异性不大  存储程序概念 多种类型的指令和数据均以数字形式存储在存储器中  MIPS-32指令集        计算机硬">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算机组成原理的学习-1-1-计算机概要与技术">
+<meta property="og:url" content="https://xipurewhite.github.io/2020/03/03/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E7%9A%84%E5%AD%A6%E4%B9%A0-2-1-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9A%84%E8%AF%AD%E8%A8%80/index.html">
+<meta property="og:site_name" content="XIPureWhite Home">
+<meta property="og:description" content="[计算机组成原理的学习]1_1-计算机概的语言 章节目录 计算机的语言  引言 计算机硬件的操作数 有符号数和无符号数 计算机中指令的表示 逻辑操作 决策指令 计算机硬件对过程的支持    章节内容 引言 指令集 一个给定的计算机体系结构所包含的指令的集合 机器语言种类繁多,但差异性不大  存储程序概念 多种类型的指令和数据均以数字形式存储在存储器中  MIPS-32指令集        计算机硬">
+<meta property="og:image" content="https://xipurewhite.github.io/2020/03/03/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E7%9A%84%E5%AD%A6%E4%B9%A0-2-1-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9A%84%E8%AF%AD%E8%A8%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86_1_1.png">
+<meta property="og:image" content="https://xipurewhite.github.io/2020/03/03/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E7%9A%84%E5%AD%A6%E4%B9%A0-2-1-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9A%84%E8%AF%AD%E8%A8%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86_1_2.png">
+<meta property="og:image" content="https://xipurewhite.github.io/2020/03/03/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E7%9A%84%E5%AD%A6%E4%B9%A0-2-1-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9A%84%E8%AF%AD%E8%A8%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86_1_3.png">
+<meta property="og:image" content="https://xipurewhite.github.io/2020/03/03/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E7%9A%84%E5%AD%A6%E4%B9%A0-2-1-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9A%84%E8%AF%AD%E8%A8%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86_1_4.png">
+<meta property="og:image" content="https://xipurewhite.github.io/2020/03/03/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E7%9A%84%E5%AD%A6%E4%B9%A0-2-1-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9A%84%E8%AF%AD%E8%A8%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86_1_5.png">
+<meta property="article:published_time" content="2020-03-03T11:34:03.000Z">
+<meta property="article:modified_time" content="2020-03-04T10:08:42.918Z">
+<meta property="article:author" content="XIPureWhite">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://xipurewhite.github.io/2020/03/03/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E7%9A%84%E5%AD%A6%E4%B9%A0-2-1-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9A%84%E8%AF%AD%E8%A8%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86_1_1.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: 'https://xipurewhite.github.io/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://xipurewhite.github.io/2020/03/03/计算机组成原理的学习-2-1-计算机的语言/"/>
+
+
+
+
+
+  <title>计算机组成原理的学习-1-1-计算机概要与技术 | XIPureWhite Home</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="https://xipurewhite.github.io/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">XIPureWhite Home</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="https://xipurewhite.github.io/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="https://xipurewhite.github.io/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="https://xipurewhite.github.io/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="https://xipurewhite.github.io/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="https://xipurewhite.github.io/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="https://xipurewhite.github.io/schedule/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
+            
+            日程表
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="https://xipurewhite.github.io/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="https://xipurewhite.github.io/404/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://xipurewhite.github.iohttps://xipurewhite.github.io/2020/03/03/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E7%9A%84%E5%AD%A6%E4%B9%A0-2-1-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9A%84%E8%AF%AD%E8%A8%80/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="XIPureWhite">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://xipurewhite.github.io/[object%20Object]">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XIPureWhite Home">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">计算机组成原理的学习-1-1-计算机概要与技术</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-03T19:34:03+08:00">
+                2020-03-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="https://xipurewhite.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E7%90%86%E8%AE%BA/" itemprop="url" rel="index">
+                    <span itemprop="name">-计算机组成原理理论</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="计算机组成原理的学习-1-1-计算机概的语言"><a href="#计算机组成原理的学习-1-1-计算机概的语言" class="headerlink" title="[计算机组成原理的学习]1_1-计算机概的语言"></a>[计算机组成原理的学习]1_1-计算机概的语言</h2><hr>
+<h3 id="章节目录"><a href="#章节目录" class="headerlink" title="章节目录"></a>章节目录</h3><blockquote>
+<h3 id="计算机的语言"><a href="#计算机的语言" class="headerlink" title="计算机的语言"></a>计算机的语言</h3><blockquote>
+<ul>
+<li><h4 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h4></li>
+<li><h4 id="计算机硬件的操作数"><a href="#计算机硬件的操作数" class="headerlink" title="计算机硬件的操作数"></a>计算机硬件的操作数</h4></li>
+<li><h4 id="有符号数和无符号数"><a href="#有符号数和无符号数" class="headerlink" title="有符号数和无符号数"></a>有符号数和无符号数</h4></li>
+<li><h4 id="计算机中指令的表示"><a href="#计算机中指令的表示" class="headerlink" title="计算机中指令的表示"></a>计算机中指令的表示</h4></li>
+<li><h4 id="逻辑操作"><a href="#逻辑操作" class="headerlink" title="逻辑操作"></a>逻辑操作</h4></li>
+<li><h4 id="决策指令"><a href="#决策指令" class="headerlink" title="决策指令"></a>决策指令</h4></li>
+<li><h4 id="计算机硬件对过程的支持"><a href="#计算机硬件对过程的支持" class="headerlink" title="计算机硬件对过程的支持"></a>计算机硬件对过程的支持</h4></li>
+</ul>
+</blockquote>
+</blockquote>
+<h3 id="章节内容"><a href="#章节内容" class="headerlink" title="章节内容"></a>章节内容</h3><blockquote>
+<h3 id="引言-1"><a href="#引言-1" class="headerlink" title="引言"></a>引言</h3><blockquote>
+<h4 id="指令集"><a href="#指令集" class="headerlink" title="指令集"></a>指令集</h4><ul>
+<li><h5 id="一个给定的计算机体系结构所包含的指令的集合"><a href="#一个给定的计算机体系结构所包含的指令的集合" class="headerlink" title="一个给定的计算机体系结构所包含的指令的集合"></a>一个给定的计算机体系结构所包含的指令的集合</h5></li>
+<li><h5 id="机器语言种类繁多-但差异性不大"><a href="#机器语言种类繁多-但差异性不大" class="headerlink" title="机器语言种类繁多,但差异性不大"></a>机器语言种类繁多,但差异性不大</h5></li>
+</ul>
+<h4 id="存储程序概念"><a href="#存储程序概念" class="headerlink" title="存储程序概念"></a>存储程序概念</h4><ul>
+<li>多种类型的指令和数据均以数字形式存储在存储器中</li>
+</ul>
+<h4 id="MIPS-32指令集"><a href="#MIPS-32指令集" class="headerlink" title="MIPS-32指令集"></a>MIPS-32指令集</h4><ul>
+<li><img src="%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86_1_1.png" alt=""></li>
+<li><img src="%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86_1_2.png" alt=""></li>
+<li><img src="%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86_1_3.png" alt=""></li>
+<li><img src="%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86_1_4.png" alt=""></li>
+</ul>
+<hr>
+</blockquote>
+<h3 id="计算机硬件的操作数-1"><a href="#计算机硬件的操作数-1" class="headerlink" title="计算机硬件的操作数"></a>计算机硬件的操作数</h3><blockquote>
+<h4 id="硬件操作数类型"><a href="#硬件操作数类型" class="headerlink" title="硬件操作数类型"></a>硬件操作数类型</h4><ul>
+<li><h5 id="存储器操作数"><a href="#存储器操作数" class="headerlink" title="存储器操作数"></a>存储器操作数</h5></li>
+<li><h5 id="常数-立即数操作数"><a href="#常数-立即数操作数" class="headerlink" title="常数/立即数操作数"></a>常数/立即数操作数</h5></li>
+</ul>
+<h4 id="MIPS"><a href="#MIPS" class="headerlink" title="MIPS"></a>MIPS</h4><ul>
+<li><h5 id="MIPS的操作数必须来自寄存器"><a href="#MIPS的操作数必须来自寄存器" class="headerlink" title="MIPS的操作数必须来自寄存器"></a>MIPS的操作数必须来自寄存器</h5><ul>
+<li>数据传输指令:存储器和寄存器之间进行数据移动的指令</li>
+<li>访问存储器的速度比访问寄存器慢得多</li>
+</ul>
+</li>
+<li><h5 id="MIPS体系结构中寄存器大小为32位"><a href="#MIPS体系结构中寄存器大小为32位" class="headerlink" title="MIPS体系结构中寄存器大小为32位"></a>MIPS体系结构中寄存器大小为32位</h5></li>
+<li><h5 id="MIPS中的字大小和寄存器大小相同"><a href="#MIPS中的字大小和寄存器大小相同" class="headerlink" title="MIPS中的字大小和寄存器大小相同"></a>MIPS中的字大小和寄存器大小相同</h5></li>
+<li><h5 id="MIPS的寄存器"><a href="#MIPS的寄存器" class="headerlink" title="MIPS的寄存器"></a>MIPS的寄存器</h5><ul>
+<li>书写指令时使用$+两个字符表示寄存器</li>
+<li>寄存器的编号<ul>
+<li>s0~s7寄存器: 16 ~ 23</li>
+<li>t0~t7寄存器: 8 ~ 15</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="硬件设计基本原则"><a href="#硬件设计基本原则" class="headerlink" title="硬件设计基本原则"></a>硬件设计基本原则</h4><ul>
+<li><h5 id="1-简单源于规整"><a href="#1-简单源于规整" class="headerlink" title="1.简单源于规整"></a>1.简单源于规整</h5><ul>
+<li>MIPS汇编指令的结构</li>
+</ul>
+</li>
+<li><h5 id="2-越小越快"><a href="#2-越小越快" class="headerlink" title="2.越小越快"></a>2.越小越快</h5><ul>
+<li>大量寄存器会导致时钟周期变长</li>
+</ul>
+</li>
+<li><h5 id="3-优秀的设计需要适宜的折中方案"><a href="#3-优秀的设计需要适宜的折中方案" class="headerlink" title="3.优秀的设计需要适宜的折中方案"></a>3.优秀的设计需要适宜的折中方案</h5><ul>
+<li>MIPS: 保存所有指令长度相同, 但不同类型的指令采用不同格式</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h3 id="有符号数和无符号数-1"><a href="#有符号数和无符号数-1" class="headerlink" title="有符号数和无符号数"></a>有符号数和无符号数</h3><blockquote>
+<blockquote>
+<p>MIPS通过专门的指令分别用于处理有符号数和无符号数</p>
+</blockquote>
+<h4 id="计算机正负数的表示法"><a href="#计算机正负数的表示法" class="headerlink" title="计算机正负数的表示法"></a>计算机正负数的表示法</h4><ul>
+<li><h5 id="符号和幅值"><a href="#符号和幅值" class="headerlink" title="符号和幅值"></a>符号和幅值</h5><ul>
+<li>通过一个符号位来表示正负</li>
+<li>缺点<ul>
+<li>符号位存放位置不明确</li>
+<li>计算机无法提前得知运算结果的符号位,需要额外的计算设置符号</li>
+<li>单独的符号位导致出现正0和负0</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><h5 id="二进制补码"><a href="#二进制补码" class="headerlink" title="二进制补码"></a>二进制补码</h5><ul>
+<li><p>前导位为0表示正数,前导位为1表示符数</p>
+</li>
+<li><p>原码和补码的转换</p>
+<ul>
+<li>按位取反后加一</li>
+<li>一个数与其按位取反的和为111…111B,即-1</li>
+</ul>
+</li>
+<li><p>符号扩展(将n位表示的二进制数转为多于n位的二进制数)</p>
+<ul>
+<li>将低位表示的数转换位高位表示的数需要将低位的数的最高有效位复制填满新数的空余高位</li>
+<li>二进制补码表示的正数左侧有无数多个0</li>
+<li>二进制补码表示的负数左侧有无数多个1</li>
+</ul>
+</li>
+<li><h5 id="原理-二进制数"><a href="#原理-二进制数" class="headerlink" title="原理(二进制数):"></a>原理(二进制数):</h5><ul>
+<li>1.一个n位数和它相反数做无符号加法结果是2n</li>
+<li>2.x的相反数-x的二进制补码表示是2n-x</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><h5 id="二进制反码"><a href="#二进制反码" class="headerlink" title="二进制反码"></a>二进制反码</h5><ul>
+<li><h5 id="规则"><a href="#规则" class="headerlink" title="规则"></a>规则</h5><ul>
+<li>一个数的相反数是这个数每一位按位取反</li>
+<li>x的相反数是2^n - x - 1</li>
+</ul>
+</li>
+<li><p>正0是00…000B</p>
+</li>
+<li><p>负0是11…111B</p>
+</li>
+<li><p>最小负数是10…000B</p>
+</li>
+<li><p>最大正数是01…111B</p>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+</blockquote>
+<h3 id="计算机中指令的表示-1"><a href="#计算机中指令的表示-1" class="headerlink" title="计算机中指令的表示"></a>计算机中指令的表示</h3><blockquote>
+<h4 id="MIPS指令格式"><a href="#MIPS指令格式" class="headerlink" title="MIPS指令格式"></a>MIPS指令格式</h4><ul>
+<li><h5 id="所有MIPS的指令都占32位长"><a href="#所有MIPS的指令都占32位长" class="headerlink" title="所有MIPS的指令都占32位长"></a>所有MIPS的指令都占32位长</h5></li>
+<li><h5 id="R型指令格式-用于寄存器"><a href="#R型指令格式-用于寄存器" class="headerlink" title="R型指令格式(用于寄存器)"></a>R型指令格式(用于寄存器)</h5></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>op</th>
+<th>rs</th>
+<th>rt</th>
+<th>rd</th>
+<th>shamt</th>
+<th>funct</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>6位</td>
+<td>5位</td>
+<td>5位</td>
+<td>5位</td>
+<td>5位</td>
+<td>6位</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>op: 指令的基本操作,通常称为操作码</p>
+<p>rs: 第一个源操作数寄存器</p>
+<p>rt: 第二个源操作数寄存器</p>
+<p>rd: 存放目标结果的寄存器</p>
+<p>shamt: 位移量</p>
+<p>func: 功能码,基于op字段的特定变式</p>
+</blockquote>
+<ul>
+<li><h5 id="I型指令格式-用于立即数"><a href="#I型指令格式-用于立即数" class="headerlink" title="I型指令格式(用于立即数)"></a>I型指令格式(用于立即数)</h5></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>op</th>
+<th>rs</th>
+<th>rt</th>
+<th>constant or address</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>6位</td>
+<td>5位</td>
+<td>5位</td>
+<td>16位</td>
+</tr>
+</tbody></table>
+<ul>
+<li><h5 id="J型指令格式"><a href="#J型指令格式" class="headerlink" title="J型指令格式"></a>J型指令格式</h5></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>op</th>
+<th>address</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>6位</td>
+<td>26位</td>
+</tr>
+</tbody></table>
+<hr>
+</blockquote>
+<h3 id="逻辑操作-1"><a href="#逻辑操作-1" class="headerlink" title="逻辑操作"></a>逻辑操作</h3><blockquote>
+<p>按位与: 按位进行与操作, 仅当两个操作位为1结果才为1</p>
+<p>按位或: 按位进行或操作, 当两个操作数中任意一位位1结果就为1</p>
+<p>按位取反: 按位进行非操作, 仅有一个操作数, 将1变成0, 将0变成1</p>
+<p>或非: 按位先或后非操作, 仅当两个操作位均为0结果才为1</p>
+<p>异或: 按位进行异或操作, 当两个操作数不同时置1, 相同时置0</p>
+<hr>
+</blockquote>
+<h3 id="决策指令-1"><a href="#决策指令-1" class="headerlink" title="决策指令"></a>决策指令</h3><blockquote>
+<ul>
+<li><h5 id="MIPS的比较指令"><a href="#MIPS的比较指令" class="headerlink" title="MIPS的比较指令"></a>MIPS的比较指令</h5></li>
+</ul>
+<blockquote>
+<p>MIPS通过比较指令置位寄存器,而不存在类似”小于则分支”的指令,需要通过两个指令组合实现”比较后分支”的功能.因为类似”小于则分支”的指令过于复杂,延长时钟周期.</p>
+</blockquote>
+<ul>
+<li><p>比较置位: 比较两个寄存器的内容,并保存结果到第三个寄存器</p>
+<ul>
+<li>slt: 小于则置位(set on less than)</li>
+<li>beq: 相等则置位</li>
+<li>bne 不相等则置位</li>
+</ul>
+</li>
+<li><h5 id="条件分支指令"><a href="#条件分支指令" class="headerlink" title="条件分支指令"></a>条件分支指令</h5><ul>
+<li>比较两个值,根据比较结果决定程序是否从一个新地址开始执行指令序列</li>
+</ul>
+</li>
+<li><h5 id="循环指令"><a href="#循环指令" class="headerlink" title="循环指令"></a>循环指令</h5><ul>
+<li>基本块: 没有分支并且没有分支目标/分支标签的指令序列</li>
+</ul>
+</li>
+<li><h5 id="case-switch语句"><a href="#case-switch语句" class="headerlink" title="case/switch语句"></a>case/switch语句</h5><ul>
+<li><h5 id="转移-地址-表-更有效的方法"><a href="#转移-地址-表-更有效的方法" class="headerlink" title="转移(地址)表(更有效的方法)"></a>转移(地址)表(更有效的方法)</h5><ul>
+<li>包含不同指令序列地址的表</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+</blockquote>
+<h3 id="计算机硬件对过程的支持-1"><a href="#计算机硬件对过程的支持-1" class="headerlink" title="计算机硬件对过程的支持"></a>计算机硬件对过程的支持</h3><blockquote>
+<ul>
+<li><h5 id="过程-函数-根据提供的参数执行一定任务的存储的子程序"><a href="#过程-函数-根据提供的参数执行一定任务的存储的子程序" class="headerlink" title="过程(/函数): 根据提供的参数执行一定任务的存储的子程序"></a>过程(/函数): 根据提供的参数执行一定任务的存储的子程序</h5></li>
+<li><h4 id="过程的实现规则"><a href="#过程的实现规则" class="headerlink" title="过程的实现规则"></a>过程的实现规则</h4><ul>
+<li><h5 id="1-参数存放于过程能够访问的位置"><a href="#1-参数存放于过程能够访问的位置" class="headerlink" title="1.参数存放于过程能够访问的位置"></a>1.参数存放于过程能够访问的位置</h5></li>
+<li><h5 id="2-将控制交给过程"><a href="#2-将控制交给过程" class="headerlink" title="2.将控制交给过程"></a>2.将控制交给过程</h5></li>
+<li><h5 id="3-获得过程需要的存储资源"><a href="#3-获得过程需要的存储资源" class="headerlink" title="3.获得过程需要的存储资源"></a>3.获得过程需要的存储资源</h5></li>
+<li><h5 id="4-执行需要的任务"><a href="#4-执行需要的任务" class="headerlink" title="4.执行需要的任务"></a>4.执行需要的任务</h5></li>
+<li><h5 id="5-将结果凡在调用程序可以访问的位置"><a href="#5-将结果凡在调用程序可以访问的位置" class="headerlink" title="5.将结果凡在调用程序可以访问的位置"></a>5.将结果凡在调用程序可以访问的位置</h5></li>
+<li><h5 id="6-将控制返回初始点"><a href="#6-将控制返回初始点" class="headerlink" title="6.将控制返回初始点"></a>6.将控制返回初始点</h5></li>
+</ul>
+</li>
+<li><h4 id="MIPS对过程的使用约定"><a href="#MIPS对过程的使用约定" class="headerlink" title="MIPS对过程的使用约定"></a>MIPS对过程的使用约定</h4><ul>
+<li><h5 id="a0-a3寄存器-传递参数寄存器"><a href="#a0-a3寄存器-传递参数寄存器" class="headerlink" title="a0 ~ a3寄存器: 传递参数寄存器"></a>a0 ~ a3寄存器: 传递参数寄存器</h5></li>
+<li><h5 id="v0-v1寄存器-返回值寄存器"><a href="#v0-v1寄存器-返回值寄存器" class="headerlink" title="v0 ~ v1寄存器: 返回值寄存器"></a>v0 ~ v1寄存器: 返回值寄存器</h5></li>
+<li><h5 id="ra寄存器-返回起始点的返回地址寄存器"><a href="#ra寄存器-返回起始点的返回地址寄存器" class="headerlink" title="ra寄存器: 返回起始点的返回地址寄存器"></a>ra寄存器: 返回起始点的返回地址寄存器</h5></li>
+<li><h5 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h5><ul>
+<li>跳转和连接指令: jal 地址,跳转到某个地址并将下一条指令的地址保存到寄存器ra中</li>
+<li>寄存器跳转指令: jr 寄存器,跳转到特定寄存器中保存的地址</li>
+</ul>
+</li>
+<li><h5 id="程序计数器-地址寄存器"><a href="#程序计数器-地址寄存器" class="headerlink" title="程序计数器(地址寄存器)"></a>程序计数器(地址寄存器)</h5><ul>
+<li>包含在程序中正在被执行指令地址的寄存器</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><h4 id="过程的更多参数"><a href="#过程的更多参数" class="headerlink" title="过程的更多参数"></a>过程的更多参数</h4><blockquote>
+<p>某个过程需要多于4个参数寄存器和2个返回值寄存器,同时在任务完成后必须消除踪迹(恢复寄存器原来的值)</p>
+</blockquote>
+<ul>
+<li><h5 id="栈数据结构"><a href="#栈数据结构" class="headerlink" title="栈数据结构"></a>栈数据结构</h5><ul>
+<li>以字为单位使用</li>
+<li>作用<ul>
+<li>存储过程调用前的寄存器状态</li>
+<li>存储过程和初始点的地址</li>
+</ul>
+</li>
+<li>通过压栈,出栈实现数据恢复</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>MIPS的约定(过程使用更多寄存器)</p>
+<p>t0 ~ t9: 10个临时寄存器,在调用过程中不必被调用者保存</p>
+<p>s0 ~ s7: 8个保留寄存器,一旦使用,由被调用者保存和恢复</p>
+</blockquote>
+<hr>
+</li>
+<li><h3 id="MIPS寻址方式"><a href="#MIPS寻址方式" class="headerlink" title="MIPS寻址方式"></a>MIPS寻址方式</h3><ul>
+<li><h5 id="MIPS使用字节寻址"><a href="#MIPS使用字节寻址" class="headerlink" title="MIPS使用字节寻址"></a>MIPS使用字节寻址</h5></li>
+<li><h5 id="PC相对寻址"><a href="#PC相对寻址" class="headerlink" title="PC相对寻址"></a>PC相对寻址</h5><ul>
+<li>一组寻址方式,它将PC和指令中的参数相加作为寻址结果</li>
+</ul>
+<p><img src="%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86_1_5.png" alt="计算机组成原理_1_5"></p>
+</li>
+<li><p>立即数寻址:</p>
+</li>
+<li><p>寄存器寻址:</p>
+</li>
+<li><p>基址寻址:</p>
+</li>
+<li><p>PC相对寻址:</p>
+</li>
+<li><p>伪直接寻址:</p>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+</blockquote>
+</blockquote>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="https://xipurewhite.github.io/2020/03/01/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%A6%82%E5%BF%B5%E7%9A%84%E5%AD%A6%E4%B9%A0-1-1-%E5%AF%BC%E8%AE%BA/" rel="next" title="操作系统概念的学习-1-1-导论">
+                <i class="fa fa-chevron-left"></i> 操作系统概念的学习-1-1-导论
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="https://xipurewhite.github.io/[object%20Object]"
+                alt="XIPureWhite" />
+            
+              <p class="site-author-name" itemprop="name">XIPureWhite</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="https://xipurewhite.github.io/archives/%20">
+              
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="https://xipurewhite.github.io/categories/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="https://xipurewhite.github.io/tags/index.html">
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#计算机组成原理的学习-1-1-计算机概的语言"><span class="nav-number">1.</span> <span class="nav-text">[计算机组成原理的学习]1_1-计算机概的语言</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#章节目录"><span class="nav-number">1.1.</span> <span class="nav-text">章节目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#计算机的语言"><span class="nav-number">1.2.</span> <span class="nav-text">计算机的语言</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#引言"><span class="nav-number">1.2.1.</span> <span class="nav-text">引言</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#计算机硬件的操作数"><span class="nav-number">1.2.2.</span> <span class="nav-text">计算机硬件的操作数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#有符号数和无符号数"><span class="nav-number">1.2.3.</span> <span class="nav-text">有符号数和无符号数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#计算机中指令的表示"><span class="nav-number">1.2.4.</span> <span class="nav-text">计算机中指令的表示</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#逻辑操作"><span class="nav-number">1.2.5.</span> <span class="nav-text">逻辑操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#决策指令"><span class="nav-number">1.2.6.</span> <span class="nav-text">决策指令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#计算机硬件对过程的支持"><span class="nav-number">1.2.7.</span> <span class="nav-text">计算机硬件对过程的支持</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#章节内容"><span class="nav-number">1.3.</span> <span class="nav-text">章节内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#引言-1"><span class="nav-number">1.4.</span> <span class="nav-text">引言</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#指令集"><span class="nav-number">1.4.1.</span> <span class="nav-text">指令集</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#一个给定的计算机体系结构所包含的指令的集合"><span class="nav-number">1.4.1.1.</span> <span class="nav-text">一个给定的计算机体系结构所包含的指令的集合</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#机器语言种类繁多-但差异性不大"><span class="nav-number">1.4.1.2.</span> <span class="nav-text">机器语言种类繁多,但差异性不大</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#存储程序概念"><span class="nav-number">1.4.2.</span> <span class="nav-text">存储程序概念</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#MIPS-32指令集"><span class="nav-number">1.4.3.</span> <span class="nav-text">MIPS-32指令集</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#计算机硬件的操作数-1"><span class="nav-number">1.5.</span> <span class="nav-text">计算机硬件的操作数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#硬件操作数类型"><span class="nav-number">1.5.1.</span> <span class="nav-text">硬件操作数类型</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#存储器操作数"><span class="nav-number">1.5.1.1.</span> <span class="nav-text">存储器操作数</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#常数-立即数操作数"><span class="nav-number">1.5.1.2.</span> <span class="nav-text">常数&#x2F;立即数操作数</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#MIPS"><span class="nav-number">1.5.2.</span> <span class="nav-text">MIPS</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#MIPS的操作数必须来自寄存器"><span class="nav-number">1.5.2.1.</span> <span class="nav-text">MIPS的操作数必须来自寄存器</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#MIPS体系结构中寄存器大小为32位"><span class="nav-number">1.5.2.2.</span> <span class="nav-text">MIPS体系结构中寄存器大小为32位</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#MIPS中的字大小和寄存器大小相同"><span class="nav-number">1.5.2.3.</span> <span class="nav-text">MIPS中的字大小和寄存器大小相同</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#MIPS的寄存器"><span class="nav-number">1.5.2.4.</span> <span class="nav-text">MIPS的寄存器</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#硬件设计基本原则"><span class="nav-number">1.5.3.</span> <span class="nav-text">硬件设计基本原则</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-简单源于规整"><span class="nav-number">1.5.3.1.</span> <span class="nav-text">1.简单源于规整</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-越小越快"><span class="nav-number">1.5.3.2.</span> <span class="nav-text">2.越小越快</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-优秀的设计需要适宜的折中方案"><span class="nav-number">1.5.3.3.</span> <span class="nav-text">3.优秀的设计需要适宜的折中方案</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#有符号数和无符号数-1"><span class="nav-number">1.6.</span> <span class="nav-text">有符号数和无符号数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#计算机正负数的表示法"><span class="nav-number">1.6.1.</span> <span class="nav-text">计算机正负数的表示法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#符号和幅值"><span class="nav-number">1.6.1.1.</span> <span class="nav-text">符号和幅值</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#二进制补码"><span class="nav-number">1.6.1.2.</span> <span class="nav-text">二进制补码</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#原理-二进制数"><span class="nav-number">1.6.1.3.</span> <span class="nav-text">原理(二进制数):</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#二进制反码"><span class="nav-number">1.6.1.4.</span> <span class="nav-text">二进制反码</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#规则"><span class="nav-number">1.6.1.5.</span> <span class="nav-text">规则</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#计算机中指令的表示-1"><span class="nav-number">1.7.</span> <span class="nav-text">计算机中指令的表示</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#MIPS指令格式"><span class="nav-number">1.7.1.</span> <span class="nav-text">MIPS指令格式</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#所有MIPS的指令都占32位长"><span class="nav-number">1.7.1.1.</span> <span class="nav-text">所有MIPS的指令都占32位长</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#R型指令格式-用于寄存器"><span class="nav-number">1.7.1.2.</span> <span class="nav-text">R型指令格式(用于寄存器)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#I型指令格式-用于立即数"><span class="nav-number">1.7.1.3.</span> <span class="nav-text">I型指令格式(用于立即数)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#J型指令格式"><span class="nav-number">1.7.1.4.</span> <span class="nav-text">J型指令格式</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#逻辑操作-1"><span class="nav-number">1.8.</span> <span class="nav-text">逻辑操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#决策指令-1"><span class="nav-number">1.9.</span> <span class="nav-text">决策指令</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#MIPS的比较指令"><span class="nav-number">1.9.0.1.</span> <span class="nav-text">MIPS的比较指令</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#条件分支指令"><span class="nav-number">1.9.0.2.</span> <span class="nav-text">条件分支指令</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#循环指令"><span class="nav-number">1.9.0.3.</span> <span class="nav-text">循环指令</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#case-switch语句"><span class="nav-number">1.9.0.4.</span> <span class="nav-text">case&#x2F;switch语句</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#转移-地址-表-更有效的方法"><span class="nav-number">1.9.0.5.</span> <span class="nav-text">转移(地址)表(更有效的方法)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#计算机硬件对过程的支持-1"><span class="nav-number">1.10.</span> <span class="nav-text">计算机硬件对过程的支持</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#过程-函数-根据提供的参数执行一定任务的存储的子程序"><span class="nav-number">1.10.0.1.</span> <span class="nav-text">过程(&#x2F;函数): 根据提供的参数执行一定任务的存储的子程序</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#过程的实现规则"><span class="nav-number">1.10.1.</span> <span class="nav-text">过程的实现规则</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-参数存放于过程能够访问的位置"><span class="nav-number">1.10.1.1.</span> <span class="nav-text">1.参数存放于过程能够访问的位置</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-将控制交给过程"><span class="nav-number">1.10.1.2.</span> <span class="nav-text">2.将控制交给过程</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-获得过程需要的存储资源"><span class="nav-number">1.10.1.3.</span> <span class="nav-text">3.获得过程需要的存储资源</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-执行需要的任务"><span class="nav-number">1.10.1.4.</span> <span class="nav-text">4.执行需要的任务</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-将结果凡在调用程序可以访问的位置"><span class="nav-number">1.10.1.5.</span> <span class="nav-text">5.将结果凡在调用程序可以访问的位置</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#6-将控制返回初始点"><span class="nav-number">1.10.1.6.</span> <span class="nav-text">6.将控制返回初始点</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#MIPS对过程的使用约定"><span class="nav-number">1.10.2.</span> <span class="nav-text">MIPS对过程的使用约定</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#a0-a3寄存器-传递参数寄存器"><span class="nav-number">1.10.2.1.</span> <span class="nav-text">a0 ~ a3寄存器: 传递参数寄存器</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#v0-v1寄存器-返回值寄存器"><span class="nav-number">1.10.2.2.</span> <span class="nav-text">v0 ~ v1寄存器: 返回值寄存器</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#ra寄存器-返回起始点的返回地址寄存器"><span class="nav-number">1.10.2.3.</span> <span class="nav-text">ra寄存器: 返回起始点的返回地址寄存器</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#指令"><span class="nav-number">1.10.2.4.</span> <span class="nav-text">指令</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#程序计数器-地址寄存器"><span class="nav-number">1.10.2.5.</span> <span class="nav-text">程序计数器(地址寄存器)</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#过程的更多参数"><span class="nav-number">1.10.3.</span> <span class="nav-text">过程的更多参数</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#栈数据结构"><span class="nav-number">1.10.3.1.</span> <span class="nav-text">栈数据结构</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MIPS寻址方式"><span class="nav-number">1.11.</span> <span class="nav-text">MIPS寻址方式</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#MIPS使用字节寻址"><span class="nav-number">1.11.0.1.</span> <span class="nav-text">MIPS使用字节寻址</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#PC相对寻址"><span class="nav-number">1.11.0.2.</span> <span class="nav-text">PC相对寻址</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">XIPureWhite</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="https://xipurewhite.github.io/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="https://xipurewhite.github.io/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="https://xipurewhite.github.io/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="https://xipurewhite.github.io/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="https://xipurewhite.github.io/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="https://xipurewhite.github.io/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="https://xipurewhite.github.io/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="https://xipurewhite.github.io/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="https://xipurewhite.github.io/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="https://xipurewhite.github.io/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="https://xipurewhite.github.io/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="https://xipurewhite.github.io/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="https://xipurewhite.github.io/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
